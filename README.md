@@ -1,0 +1,2 @@
+# inve-repo
+inventory repository
