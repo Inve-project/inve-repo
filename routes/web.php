@@ -107,5 +107,15 @@ Route::get('/ListRequestProduct', [App\Http\Controllers\Request\RequestProductCo
 
 
 
+  /*                             Request Product
+                   ##########################################*/
+Route::get('/ListUserProduct', [App\Http\Controllers\Product\UserProductController::class, 'ListUserProduct']);
+
+
+  /*                             Sell Product
+                   ##########################################*/
+Route::get('/ListSellProduct', [App\Http\Controllers\Product\SellProductController::class, 'ListSellProduct']);
+
+
 
 Route::get('logs', [\Rap2hpoutre\LaravelLogViewer\LogViewerController::class, 'index']);

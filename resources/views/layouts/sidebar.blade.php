@@ -117,6 +117,25 @@
               </p>
             </a>
           </li>
+          <li class="nav-item">
+            <a href="{{ url('ListUserProduct')}}" class="nav-link">
+              <i class="nav-icon fas fa-tree"></i>
+              <p>
+                 Product
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="{{ url('ListSellProduct')}}" class="nav-link">
+              <i class="nav-icon fas fa-tree"></i>
+              <p>
+                 Sell Product
+              </p>
+            </a>
+          </li>
+          
+
+
         </ul>
       </nav>
       <!-- /.sidebar-menu -->
