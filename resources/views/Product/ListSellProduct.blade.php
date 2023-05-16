@@ -4,14 +4,7 @@
   <link rel="stylesheet" href="../../plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
   <link rel="stylesheet" href="../../plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
   <link rel="stylesheet" href="../../plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
-  <style type="text/css">  
-      .edit_icon{
-      width: 23px;
-      }
-      .delete_icon{
-      width: 25px;
-      }
-  </style> 
+ 
 @endsection
 @section("content")
   <!-- Content Wrapper. Contains page content -->
@@ -21,7 +14,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>UserProduct</h1>
+            <h1>Sold Product</h1>
           </div>
         </div>
       </div><!-- /.container-fluid -->
@@ -33,6 +26,8 @@
       <div class="container-fluid">
         <div class="row">
           <div class="col-10">
+          <a href="{{url('AddSellProduct')}}"><button class="btn btn-success btn-sm">Sell Product </button></a>
+          <br>
           <br>
             <div class="card">
               <!-- /.card-header -->
@@ -41,10 +36,10 @@
                   <thead>
                   <tr>
                     <th>Id</th>
-                    <th>Name</th>
-                    <th>Category</th>
-                    <th>Units</th>
+                    <th>User_id</th>
                     <th>Quantity</th>
+                    <th>Amount</th>
+                    <th>date</th>
                     <th>Actions</th>
                   </tr>
                   </thead>
@@ -53,9 +48,9 @@
                       <tr>
                     <td>{{$data->id}}</td>
                     <td>{{$data->user_id}}</td>
-                    <td>{{$data->category}}</td>
-                    <td>{{$data->units}}</td>
                     <td>{{$data->quantity}}</td>
+                    <td>{{$data->Amount}}</td>
+                    <td>{{$data->date}}</td>
                      <td>
                             <a href="{{url('editUserProduct',$data->id)}}"><img class="edit_icon" src="img/edit.jpg" alt="icon"></a> 
                        </td>

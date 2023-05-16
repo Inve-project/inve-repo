@@ -24,7 +24,7 @@ class SellProductController extends Controller
     
      public function ListSellProduct(){
 
-            $data = UserProduct::all();
+            $data = SellProduct::all();
             return view('Product.ListSellProduct',compact('data') );
 
             }
