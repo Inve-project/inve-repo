@@ -99,4 +99,13 @@ Route::get('/ListManufacturedProduct', [App\Http\Controllers\Manufactured\Manufa
 
 
 
+  /*                             Request Product
+                   ##########################################*/
+Route::get('/RequestProduct', [App\Http\Controllers\Request\RequestProductController::class, 'RequestProduct']);
+Route::post('/AddRequestProduct', [App\Http\Controllers\Request\RequestProductController::class, 'AddRequestProduct']);
+Route::get('/ListRequestProduct', [App\Http\Controllers\Request\RequestProductController::class, 'ListRequestProduct']);
+
+
+
+
 Route::get('logs', [\Rap2hpoutre\LaravelLogViewer\LogViewerController::class, 'index']);
