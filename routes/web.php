@@ -90,6 +90,13 @@ Route::get('/ListUsedRawmaterial', [App\Http\Controllers\UsedRawmaterial\UsedRaw
 Route::get('/viewUsedRawmaterial/{id}', [App\Http\Controllers\UsedRawmaterial\UsedRawmaterialController::class, 'viewUsedRawmaterial']);
 
 
-Route::get('demo', [App\Http\Controllers\UsedRawmaterial\UsedRawmaterialController::class, 'Demo']);
 
-                       
+  /*                               manufactured
+                   ##########################################*/
+Route::get('/ManufacturedProduct', [App\Http\Controllers\Manufactured\ManufacturedProductController::class, 'ManufacturedProduct']);
+Route::post('/AddManufacturedProduct', [App\Http\Controllers\Manufactured\ManufacturedProductController::class, 'AddManufacturedProduct']);
+Route::get('/ListManufacturedProduct', [App\Http\Controllers\Manufactured\ManufacturedProductController::class, 'ListManufacturedProduct']);
+
+
+
+Route::get('logs', [\Rap2hpoutre\LaravelLogViewer\LogViewerController::class, 'index']);

@@ -99,7 +99,15 @@
               </p>
             </a>
           </li>
-        
+          <li class="nav-item">
+            <a href="{{ url('ListManufacturedProduct')}}" class="nav-link">
+              <i class="nav-icon fas fa-tree"></i>
+              <p>
+                ManufacturedProduct
+                <!-- <i class="fas fa-angle-left right"></i> -->
+              </p>
+            </a>
+          </li>
         </ul>
       </nav>
       <!-- /.sidebar-menu -->
