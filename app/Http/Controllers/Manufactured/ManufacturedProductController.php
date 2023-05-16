@@ -67,30 +67,5 @@ class ManufacturedProductController extends Controller
 
            }
 
-        public function deleteRawmaterial($id){
-
-               $data = rawmaterial::find($id);
-               $data->delete();
-              return redirect()->back()->with('message','Raw material Deleted Successfuly');
-               }
-
-       public function editRawmaterial($id){
-
-                   $data = rawmaterial::find($id);
-                   $category = RawmaterialCategory::all();
-                   $units = RawmaterialUnits::all();
-                   return view('Rawmaterial.editRawmaterial',compact('data','category','units') );
-                   }
-
-       public function updateRawmaterial(Request $request, $id){
-
-           $data = rawmaterial::find($id);
-           $data->User_name=Auth::id();
-           $data->category=$request->category;
-           $data->units=$request->units;
-           $data->save();
-                        return redirect()->back()->with('message','Category Apdated Successfuly');
-                   
-                       }
-
+      
 }
