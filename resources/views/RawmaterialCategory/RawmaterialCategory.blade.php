@@ -1,25 +1,32 @@
 @extends("master")
 @section("css")
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" integrity="sha512-3pIirOrwegjM6erE5gPSwkUzO+3cTjpnV9lexlNZqvupR64iZBnOOTiiLPb9M36zpMScbmUNIcHUqKD47M719g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<style type="text/css">  
+      .buttoncolor{
+          color:#ffff;
+  }
+  </style>
 @endsection
 @section("content")
-
-<div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-    <div class="content-header">
-      <div class="container-fluid">
-        <div class="row mb-2">
-          <div class="col-sm-6">
-            <h1 class="m-0">Add Raw Material Category</h1>
-          </div>
-          <div class="col-sm-6">
-            <ol class="breadcrumb float-sm-right">
-            <li><a href="{{url('ListRawmaterialCategory')}}"><button class="btn btn-secondary btn-sm">Go Back</button></a></li>
-            </ol>
-          </div>
-        </div>
-      </div>
-    </div>
+   <!-- Content Wrapper. Contains page content -->
+   <div class="content-wrapper main">
+       <!-- Content Header (Page header) -->
+          <!-- /.card-header -->
+          <div class="card-body ">
+                <div class="callout callout-success">
+                  <div class="row">
+                    <div class="col-11">
+                       <h3>Add Raw material category</h3>
+                    </div>
+                    <div class="col-1">
+                        <div class="btn-group btn-group-sm ">
+                             <a href="{{url('ListRawmaterialCategory')}}" class="btn btn-success "><i class="fas fa-arrow-right buttoncolor"></i></a>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+              <!-- /.card-body -->
     <!-- /.content-header -->
 
     <!-- Main content -->
@@ -39,7 +46,7 @@
                     <input type="text" name="name" class="form-control" id="exampleInputCategory" placeholder="Enter Category Name" required>
                   </div>
                 <!-- /.card-body -->
-                  <button type="submit" class="btn btn-primary">Add</button>
+                  <button type="submit" class="btn btn-success">Add</button>
               </form>
             </div>
             <!-- /.card -->

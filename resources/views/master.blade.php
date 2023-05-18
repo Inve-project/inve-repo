@@ -11,6 +11,11 @@
   <!-- Font Awesome -->
   <link rel="stylesheet" href="../../plugins/fontawesome-free/css/all.min.css">
   <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
+  <style>
+    .main{
+        background: #fdfdfd;
+    }
+  </style>
 
   @yield("css")
 </head>
