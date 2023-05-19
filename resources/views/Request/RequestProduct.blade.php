@@ -1,26 +1,32 @@
 @extends("master")
 @section("css")
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" integrity="sha512-3pIirOrwegjM6erE5gPSwkUzO+3cTjpnV9lexlNZqvupR64iZBnOOTiiLPb9M36zpMScbmUNIcHUqKD47M719g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
+<style type="text/css">  
+      .buttoncolor{
+          color:#ffff;
+  }
+  </style>
 @endsection
 @section("content")
-
-<div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-    <div class="content-header">
-      <div class="container-fluid">
-        <div class="row mb-2">
-          <div class="col-sm-6">
-            <h1 class="m-0">Request Product</h1>
-          </div>
-          <div class="col-sm-6">
-            <ol class="breadcrumb float-sm-right">
-            <li><a href="{{url('ListRequestProduct')}}"><button class="btn btn-secondary btn-sm">Go Back</button></a></li>
-            </ol>
-          </div>
-        </div>
-      </div>
-    </div>
+   <!-- Content Wrapper. Contains page content -->
+   <div class="content-wrapper main">
+       <!-- Content Header (Page header) -->
+          <!-- /.card-header -->
+          <div class="card-body ">
+                <div class="callout callout-success">
+                  <div class="row">
+                    <div class="col-11">
+                       <h3>Request Product</h3>
+                    </div>
+                    <div class="col-1">
+                        <div class="btn-group btn-group-sm ">
+                             <a href="{{url('ListRequestProduct')}}" class="btn btn-success "><i class="fas fa-arrow-right buttoncolor"></i></a>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+              <!-- /.card-body -->
     <!-- /.content-header -->
 
     <!-- Main content -->
@@ -28,14 +34,14 @@
    <div class="container-fluid">
    <div class="row">
    <!-- left column -->
-   <div class="col-md-8">
+   <div class="col-md-10">
       <!-- jquery validation -->
       <div class="card card-primary">
          <!-- form start -->
          <form  method="POST" action="{{url('AddRequestProduct')}}"class="row g-3">
             @csrf
             <div class="card-body">
-               <div class="row  col-md-9">
+               <div class="row  col-md-10">
                <div class="form-group col-md-12">
                      <label >Product name</label>
                      <select class="form-control select2" style="width: 100%;" name="id" required>
@@ -54,7 +60,7 @@
                      <input type="date" name="date" class="form-control" id="exampleInputCategory" placeholder="" required>
                   </div>
                   <div class="form-group col-md-12"">
-                     <button type="submit" class="btn btn-primary">Submit</button>
+                     <button type="submit" class="btn btn-success">Submit</button>
                   </div>
          </form>
          </div>

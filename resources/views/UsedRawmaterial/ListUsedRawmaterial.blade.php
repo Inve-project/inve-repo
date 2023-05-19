@@ -45,8 +45,8 @@
                     <th>Id</th>
                     <th>User id</th>
                     <th>Raw material</th>
-                    <th>Quantity</th>
                     <th>Date</th>
+                    <th>Quantity</th>
                     <th>Name</th>
                     <th>Actions</th>
                   </tr>

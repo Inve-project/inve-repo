@@ -16,14 +16,14 @@
        <!-- Content Header (Page header) -->
           <!-- /.card-header -->
           <div class="card-body ">
-                <div class="callout callout-warning">
+                <div class="callout callout-success">
                   <div class="row">
                     <div class="col-11">
                        <h3>Raw material category</h3>
                     </div>
                     <div class="col-1">
                         <div class="btn-group btn-group-sm ">
-                             <a href="{{url('RawmaterialCategory')}}" class="btn btn-primary "><i class="fas fa-plus buttoncolor"></i></a>
+                             <a href="{{url('RawmaterialCategory')}}" class="btn btn-success "><i class="fas fa-plus buttoncolor"></i></a>
                         </div>
                     </div>
                   </div>

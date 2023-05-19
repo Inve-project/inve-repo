@@ -108,10 +108,13 @@ Route::get('/ListManufacturedProduct', [App\Http\Controllers\Manufactured\Manufa
 Route::get('/RequestProduct', [App\Http\Controllers\Request\RequestProductController::class, 'RequestProduct']);
 Route::post('/AddRequestProduct', [App\Http\Controllers\Request\RequestProductController::class, 'AddRequestProduct']);
 Route::get('/ListRequestProduct', [App\Http\Controllers\Request\RequestProductController::class, 'ListRequestProduct']);
+Route::get('/onprogress/{id}', [App\Http\Controllers\Request\RequestProductController::class, 'onprogress']);
+Route::get('/approved/{id}', [App\Http\Controllers\Request\RequestProductController::class, 'approved']);
 
 
 
-  /*                             Request Product
+
+  /*                             User Product
                    ##########################################*/
 Route::get('/ListUserProduct', [App\Http\Controllers\Product\UserProductController::class, 'ListUserProduct']);
 

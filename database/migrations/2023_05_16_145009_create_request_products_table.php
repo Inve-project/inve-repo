@@ -20,6 +20,7 @@ class CreateRequestProductsTable extends Migration
             $table->string('quantity',10)->nullable();
             $table->string('status',30)->nullable();
             $table->string('date',10)->nullable();
+            $table->string('color',10)->nullable();
             $table->foreign('user_id')->references('id')->on('users');
             $table->foreign('product_id')->references('id')->on('products');
             $table->softDeletes();
