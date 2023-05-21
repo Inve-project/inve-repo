@@ -76,7 +76,7 @@ class RawmaterialController extends Controller
             $data->category=$request->category;
             $data->units=$request->units;
             $data->save();
-                         return redirect()->back()->with('message','Category Apdated Successfuly');
+                   return redirect()->back()->with('message','Category Apdated Successfuly');
                     
                         }
 
