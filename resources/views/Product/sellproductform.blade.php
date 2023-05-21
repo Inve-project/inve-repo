@@ -16,11 +16,11 @@
                 <div class="callout callout-success">
                   <div class="row">
                     <div class="col-11">
-                       <h3>Add Raw material category</h3>
+                       <h3>Sold Product</h3>
                     </div>
                     <div class="col-1">
                         <div class="btn-group btn-group-sm ">
-                             <a href="{{url('Listsellproduct')}}" class="btn btn-success "><i class="fas fa-arrow-right buttoncolor"></i></a>
+                             <a href="{{url('ListSellProduct')}}" class="btn btn-success "><i class="fas fa-arrow-right buttoncolor"></i></a>
                         </div>
                     </div>
                   </div>
@@ -28,39 +28,57 @@
             </div>
               <!-- /.card-body -->
     <!-- /.content-header -->
-
     <!-- Main content -->
     <section class="content">
-      <div class="container-fluid">
-        <div class="row">
-          <!-- left column -->
-          <div class="col-md-8">
-            <!-- jquery validation -->
-            <div class="card card-primary">
-              <!-- form start -->
-              <form  method="POST" action="{{url('Addsellproduct')}}"class="row g-3">
-                @csrf
-                <div class="card-body">
-                  <div class="form-group">
-                    <label >Category Name</label>
-                    <input type="text" name="name" class="form-control" id="exampleInputCategory" placeholder="Enter Category Name" required>
+   <div class="container-fluid">
+   <div class="row">
+   <!-- left column -->
+   <div class="col-md-12">
+      <!-- jquery validation -->
+      <div class="card card-primary">
+         <!-- form start -->
+         <form  method="POST" action="{{url('Addsellproduct')}}"class="row g-3">
+            @csrf
+            <div class="card-body">
+               <div class="row  col-md-12">
+               <div class="form-group col-md-6">
+                     <label >Product name</label>
+                     <select class="form-control select2" style="width: 100%;" name="id" required>
+                        <option></option>
+                        @foreach($data as $data)
+                        <option value="{{$data->id}}">{{$data->name}} in {{$data->units}}</option>
+                        @endforeach
+                     </select>
                   </div>
-                <!-- /.card-body -->
-                  <button type="submit" class="btn btn-success">Add</button>
-              </form>
-            </div>
-            <!-- /.card -->
-            </div>
-          <!--/.col (left) -->
-          <!-- right column -->
-          <div class="col-md-6">
-
-          </div>
-          <!--/.col (right) -->
-        </div>
-        <!-- /.row -->
-      </div><!-- /.container-fluid -->
-    </section>
+                  <div class="form-group col-md-6">
+                     <label >Quantity</label>
+                     <input type="number" name="quantity" class="form-control" id="exampleInputCategory" placeholder="" required>
+                  </div>
+                  <div class="form-group col-md-6">
+                     <label >Amount</label>
+                     <input type="number" name="amount" class="form-control" id="exampleInputCategory" placeholder="" required>
+                  </div>
+                  <div class="form-group col-md-6">
+                     <label >Date</label>
+                     <input type="date" name="date" class="form-control" id="exampleInputCategory" placeholder="" required>
+                  </div>
+                  <div class="form-group col-md-12"">
+                     <button type="submit" class="btn btn-primary">Submit</button>
+                  </div>
+         </form>
+         </div>
+         <!-- /.card -->
+         </div>
+         <!--/.col (left) -->
+         <!-- right column -->
+         <div class="col-md-6">
+         </div>
+         <!--/.col (right) -->
+      </div>
+      <!-- /.row -->
+   </div>
+   <!-- /.container-fluid -->
+</section>
     <!-- /.content -->
   </div>
 @endsection
