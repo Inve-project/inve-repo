@@ -7,7 +7,7 @@
 
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
-    <div class="content-header">
+    {{-- <div class="content-header">
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
@@ -20,6 +20,20 @@
           </div>
         </div>
       </div>
+    </div> --}}
+    <div class="card-body ">
+        <div class="callout callout-success">
+          <div class="row">
+            <div class="col-11">
+               <h3>Add Product</h3>
+            </div>
+            <div class="col-1">
+                <div class="btn-group btn-group-sm ">
+                     <a href="{{url('ListProduct')}}" class="btn btn-success "><i class="fas fa-arrow-right buttoncolor"></i></a>
+                </div>
+            </div>
+          </div>
+        </div>
     </div>
     <!-- /.content-header -->
 

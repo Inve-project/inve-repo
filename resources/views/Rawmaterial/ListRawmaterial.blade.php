@@ -4,7 +4,7 @@
   <link rel="stylesheet" href="../../plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
   <link rel="stylesheet" href="../../plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
   <link rel="stylesheet" href="../../plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
-  <style type="text/css">  
+  <style type="text/css">
       .edit_icon{
       width: 23px;
       }
@@ -17,30 +17,36 @@
       /* .delete_icon:hover{
       width: 32px;
       } */
-     
-  </style> 
+
+  </style>
 @endsection
 @section("content")
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
-    <section class="content-header">
-      <div class="container-fluid">
-        <div class="row mb-2">
-          <div class="col-sm-6">
-            <h1>Raw material</h1>
+    <div class="card-body ">
+        <div class="callout callout-success">
+          <div class="row">
+            <div class="col-11">
+                <h1>Raw Material</h1>
+            </div>
+            <div class="col-1">
+                <div class="btn-group btn-group-sm ">
+                     <a href="{{url('Rawmaterial')}}" class="btn btn-success "><i class="fas fa-plus buttoncolor"></i></a>
+                </div>
+            </div>
           </div>
         </div>
-      </div><!-- /.container-fluid -->
-    </section>
-    
+    </div>
+
 
     <!-- Main content -->
     <section class="content">
       <div class="container-fluid">
         <div class="row">
-          <div class="col-10">
-          <a href="{{url('Rawmaterial')}}"><button class="btn btn-success btn-sm">Add Rawmaterial </button></a>
+          {{-- <div class="col-10"> --}}
+            <div class="col-lg-12">
+          {{-- <a href="{{url('Rawmaterial')}}"><button class="btn btn-success btn-sm">Add Rawmaterial </button></a> --}}
           <br>
           <br>
             <div class="card">
@@ -77,14 +83,14 @@
                       @endforeach
                   </tbody>
                   <tfoot>
-                  <tr>
+                  {{-- <tr>
                   <th>Id</th>
                     <th>Name</th>
                     <th>Category</th>
                     <th>Units</th>
                     <th>Quantity</th>
                     <th>Actions</th>
-                  </tr>
+                  </tr> --}}
                   </tfoot>
                 </table>
               </div>
