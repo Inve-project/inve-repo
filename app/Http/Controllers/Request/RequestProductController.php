@@ -97,16 +97,16 @@ class RequestProductController extends Controller
                        ->where('id', $ProductId)
                        ->update(['quantity' => $quantity]);
            
-                //    $db = DB::table('user_products')
-                //        ->select('quantity')
-                //        ->where('product_id', '=', $ProductId)
-                //        ->get();
-                //    $quantityInStock = $db[0]->quantity;
-                //    $quantityInStock += $quantity1;
+                   $db = DB::table('user_products')
+                       ->select('quantity')
+                       ->where('product_id', '=', $ProductId)
+                       ->get();
+                   $quantityInStock = $db[0]->quantity;
+                   $quantityInStock += $quantity1;
            
-                //    DB::table('user_products')
-                //        ->where('product_id', $ProductId)
-                //        ->update(['quantity' => $quantityInStock]);
+                   DB::table('user_products')
+                       ->where('product_id', $ProductId)
+                       ->update(['quantity' => $quantityInStock]);
            
                    DB::table('request_products')
                        ->where('id', $id)

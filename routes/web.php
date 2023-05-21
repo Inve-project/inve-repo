@@ -117,6 +117,8 @@ Route::get('/approved/{id}', [App\Http\Controllers\Request\RequestProductControl
   /*                             User Product
                    ##########################################*/
 Route::get('/ListUserProduct', [App\Http\Controllers\Product\UserProductController::class, 'ListUserProduct']);
+Route::post('/AddUserProduct', [App\Http\Controllers\Product\UserProductController::class, 'AddUserProduct']);
+Route::get('/UserProductform', [App\Http\Controllers\Product\UserProductController::class, 'UserProductform']);
 
 
   /*                             Sell Product
