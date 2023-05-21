@@ -6,19 +6,19 @@
 
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
-    <div class="content-header">
-      <div class="container-fluid">
-        <div class="row mb-2">
-          <div class="col-sm-6">
-            <h1 class="m-0">Add Product Units</h1>
-          </div>
-          <div class="col-sm-6">
-            <ol class="breadcrumb float-sm-right">
-            <li><a href="{{url('ListProductUnits')}}"><button class="btn btn-secondary btn-sm">Go Back</button></a></li>
-            </ol>
+    <div class="card-body ">
+        <div class="callout callout-success">
+          <div class="row">
+            <div class="col-11">
+               <h3>Add Product Units</h3>
+            </div>
+            <div class="col-1">
+                <div class="btn-group btn-group-sm ">
+                     <a href="{{url('ListProductUnits')}}" class="btn btn-success "><i class="fas fa-arrow-right buttoncolor"></i></a>
+                </div>
+            </div>
           </div>
         </div>
-      </div>
     </div>
     <!-- /.content-header -->
 

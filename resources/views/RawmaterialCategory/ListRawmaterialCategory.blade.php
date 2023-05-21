@@ -4,12 +4,16 @@
   <link rel="stylesheet" href="../../plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
   <link rel="stylesheet" href="../../plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
   <link rel="stylesheet" href="../../plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
-  <style type="text/css">  
-      .buttoncolor{
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" integrity="sha512-3pIirOrwegjM6erE5gPSwkUzO+3cTjpnV9lexlNZqvupR64iZBnOOTiiLPb9M36zpMScbmUNIcHUqKD47M719g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="../../plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
+  <link rel="stylesheet" href="../../plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
+  <link rel="stylesheet" href="../../plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
+  <style type="text/css">
+        .buttoncolor{
           color:#ffff;
   }
-  </style> 
-@endsection
+  </style>
+@endsecti on
 @section("content")
    <!-- Content Wrapper. Contains page content -->
  <div class="content-wrapper main">
@@ -56,12 +60,11 @@
                     <td>{{$data->id}}</td>
                     <td>{{$data->Category_name}}</td>
                     <td class="text-center py-0 align-middle">
-                    <div class="btn-group btn-group-sm">
                         <a href="{{url('editRawmaterialCategory',$data->id)}}" class="btn btn-info"><i class="fas fa-pen"></i></a>
                         <a
                         onclick="return confirm('Are you sure  you want to delete')"
                          href="{{url('deleteRawmaterialCategory',$data->id)}}" class="btn btn-danger"><i class="fas fa-trash"></i></a>
-                      </div>
+
                       </td>
                        </tr>
                       @endforeach
