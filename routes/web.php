@@ -124,6 +124,8 @@ Route::get('/UserProductform', [App\Http\Controllers\Product\UserProductControll
   /*                             Sell Product
                    ##########################################*/
 Route::get('/ListSellProduct', [App\Http\Controllers\Product\SellProductController::class, 'ListSellProduct']);
+Route::get('/SellProductform', [App\Http\Controllers\Product\SellProductController::class, 'SellProductform']);
+Route::post('/Addsellproduct', [App\Http\Controllers\Product\SellProductController::class, 'Addsellproduct']);
 
 
 

@@ -4,36 +4,25 @@
   <link rel="stylesheet" href="../../plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
   <link rel="stylesheet" href="../../plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
   <link rel="stylesheet" href="../../plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
-  <style type="text/css">
-        .buttoncolor{
-          color:#ffff;
-  }
-  </style>
-@endsecti on
+
+@endsection
 @section("content")
-   <!-- Content Wrapper. Contains page content -->
- <div class="content-wrapper main">
-       <!-- Content Header (Page header) -->
-          <!-- /.card-header -->
-          <div class="card-body ">
-                <div class="callout callout-success">
-                  <div class="row">
-                    <div class="col-11">
-                       <h3>Sold Product</h3>
-                    </div>
-                    <div class="col-1">
-                        <div class="btn-group btn-group-sm ">
-                             <a href="{{url('AddSellProduct')}}" class="btn btn-success "><i class="fas fa-plus buttoncolor"></i></a>
-                        </div>
-                    </div>
-                  </div>
-                </div>
-            </div>
-              <!-- /.card-body -->
-    <!-- /.content-header -->
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1>Sold Product</h1>
+          </div>
+        </div>
+      </div><!-- /.container-fluid -->
+    </section>
+
 
     <!-- Main content -->
-    <div class="content">
+    <section class="content">
       <div class="container-fluid">
         <div class="row">
           <!-- /.col-md-6 -->
@@ -44,26 +33,27 @@
                 <table id="example1" class="table table-bordered table-striped">
                   <thead>
                   <tr>
+                  <tr>
                     <tr>
                         <th>Id</th>
-                        <th>User_id</th>
-                        <th>Quantity</th>
-                        <th>Amount</th>
-                        <th>date</th>
-                        <th>Actions</th>
+                        <td>product_id</td>
+                        <td>Quantity</td>
+                        <td>Amount</td>
+                        <td>date</td>
+                        <!-- <th>Actions</th> -->
                       </tr>
                   </thead>
                   <tbody>
                   @foreach($data as $data)
                       <tr>
-                        <td>{{$data->id}}</td>
-                        <td>{{$data->user_id}}</td>
-                        <td>{{$data->quantity}}</td>
-                        <td>{{$data->Amount}}</td>
-                        <td>{{$data->date}}</td>
-                    <td class="text-center py-0 align-middle">
-                        <a href="{{url('editUserProduct',$data->id)}}" class="btn btn-info"><i class="fas fa-pen"></i></a>
-                      </td>
+                    <td>{{$data->id}}</td>
+                    <td>{{$data->user_id}}</td>
+                    <td>{{$data->quantity}}</td>
+                    <td>{{$data->Amount}}</td>
+                    <td>{{$data->date}}</td>
+                     <td>
+                            <a href="{{url('editUserProduct',$data->id)}}"><img class="edit_icon" src="img/edit.jpg" alt="icon"></a>
+                       </td>
                        </tr>
                       @endforeach
                   </tbody>
@@ -78,6 +68,9 @@
       </div><!-- /.container-fluid -->
     </div>
     <!-- /.content -->
+
+
+
   </div>
   <!-- /.content-wrapper -->
   @endsection
