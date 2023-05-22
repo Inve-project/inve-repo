@@ -4,50 +4,46 @@
   <link rel="stylesheet" href="../../plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
   <link rel="stylesheet" href="../../plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
   <link rel="stylesheet" href="../../plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
-  <style type="text/css">  
-      .edit_icon{
-      width: 23px;
-      }
-      /* .edit_icon:hover{
-      width: 30px;
-      } */
-      .delete_icon{
-      width: 25px;
-      }
-      /* .delete_icon:hover{
-      width: 32px;
-      } */
-     
-  </style> 
+  <style type="text/css">
+        .buttoncolor{
+          color:#ffff;
+  }
+  </style>
 @endsection
 @section("content")
-  <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-    <section class="content-header">
-      <div class="container-fluid">
-        <div class="row mb-2">
-          <div class="col-sm-6">
-            <h1>Manufactured Product</h1>
-          </div>
-        </div>
-      </div><!-- /.container-fluid -->
-    </section>
-    
+   <!-- Content Wrapper. Contains page content -->
+ <div class="content-wrapper main">
+       <!-- Content Header (Page header) -->
+          <!-- /.card-header -->
+          <div class="card-body ">
+                <div class="callout callout-success">
+                  <div class="row">
+                    <div class="col-11">
+                       <h3>Manufactured Products</h3>
+                    </div>
+                    <div class="col-1">
+                        <div class="btn-group btn-group-sm ">
+                             <a href="{{url('ManufacturedProduct')}}" class="btn btn-success "><i class="fas fa-plus buttoncolor"></i></a>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+              <!-- /.card-body -->
+    <!-- /.content-header -->
 
     <!-- Main content -->
-    <section class="content">
+    <div class="content">
       <div class="container-fluid">
         <div class="row">
-          <div class="col-10">
-          <a href="{{url('ManufacturedProduct')}}"><button class="btn btn-success btn-sm">Add Product </button></a>
-          <br>
-          <br>
+          <!-- /.col-md-6 -->
+          <div class="col-lg-12">
+
             <div class="card">
-              <!-- /.card-header -->
               <div class="card-body">
                 <table id="example1" class="table table-bordered table-striped">
                   <thead>
+                  <tr>
                   <tr>
                     <th>Id</th>
                     <th>Product</th>
@@ -60,42 +56,29 @@
                   <tbody>
                   @foreach($data as $data)
                       <tr>
-                    <td>{{$data->id}}</td>
-                    <td>{{$data->product_id}}</td>
-                    <td>{{$data->quantity}}</td>
-                    <td>{{$data->Intake}}</td>
-                    <td>{{$data->date}}</td>
+                        <td>{{$data->id}}</td>
+                        <td>{{$data->product_id}}</td>
+                        <td>{{$data->quantity}}</td>
+                        <td>{{$data->Intake}}</td>
+                        <td>{{$data->date}}</td>
                     <td class="text-center py-0 align-middle">
-                    <div class="btn-group btn-group-sm">
-                        <a href="{{url('editRawmaterial',$data->id)}}" class="btn btn-primary"><i class="fas fa-eye"></i></a>
-                      </div>
+                        <div class="btn-group btn-group-sm">
+                            <a href="{{url('editRawmaterial',$data->id)}}" class="btn btn-primary"><i class="fas fa-eye"></i></a>
+                          </div>
                       </td>
                        </tr>
                       @endforeach
                   </tbody>
-                  <tfoot>
-                  <tr>
-                  <tr>
-                    <th>Id</th>
-                    <th>Product</th>
-                    <th>Quantity</th>
-                    <th>Intake</th>
-                    <th>Date</th>
-                    <th>Actions</th>
-                  </tr>
-                  </tfoot>
                 </table>
               </div>
               <!-- /.card-body -->
             </div>
-            <!-- /.card -->
           </div>
-          <!-- /.col -->
+          <!-- /.col-md-6 -->
         </div>
         <!-- /.row -->
-      </div>
-      <!-- /.container-fluid -->
-    </section>
+      </div><!-- /.container-fluid -->
+    </div>
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->

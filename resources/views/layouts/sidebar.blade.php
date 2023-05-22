@@ -13,7 +13,7 @@
       <!-- Sidebar Menu -->
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-          
+
           <li class="nav-item">
             <a href="{{ url('dashboard')}}" class="nav-link">
               <i class="nav-icon fas fa-chart-pie"></i>
@@ -35,7 +35,7 @@
               <li class="nav-item">
                 <a href="{{ url('ListRawmaterialCategory')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Category</p>
+                  <p>Categories</p>
                 </a>
               </li>
               <li class="nav-item">
@@ -47,7 +47,7 @@
               <li class="nav-item">
                 <a href="{{ url('ListRawmaterial')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Rawmaterial</p>
+                  <p>Raw Materials</p>
                 </a>
               </li>
             </ul>
@@ -56,7 +56,7 @@
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-tree"></i>
               <p>
-                Manage Product
+                Manage Products
                 <i class="fas fa-angle-left right"></i>
               </p>
             </a>
@@ -64,7 +64,7 @@
               <li class="nav-item">
                 <a href="{{ url('ListProductCategory')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Category</p>
+                  <p>Categories</p>
                 </a>
               </li>
               <li class="nav-item">
@@ -76,7 +76,7 @@
               <li class="nav-item">
                 <a href="{{ url('ListProduct')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Product</p>
+                  <p>Products</p>
                 </a>
               </li>
             </ul>
@@ -85,7 +85,7 @@
             <a href="{{ url('ListPayment')}}" class="nav-link">
               <i class="nav-icon fas fa-tree"></i>
               <p>
-                Payment
+                Payments
                 <!-- <i class="fas fa-angle-left right"></i> -->
               </p>
             </a>
@@ -94,7 +94,7 @@
             <a href="{{ url('ListUsedRawmaterial')}}" class="nav-link">
               <i class="nav-icon fas fa-tree"></i>
               <p>
-                UsedRawmaterial
+                Used Raw Materials
                 <!-- <i class="fas fa-angle-left right"></i> -->
               </p>
             </a>
@@ -103,7 +103,7 @@
             <a href="{{ url('ListManufacturedProduct')}}" class="nav-link">
               <i class="nav-icon fas fa-tree"></i>
               <p>
-                ManufacturedProduct
+                Manufactured Products
                 <!-- <i class="fas fa-angle-left right"></i> -->
               </p>
             </a>
@@ -112,7 +112,7 @@
             <a href="{{ url('ListRequestProduct')}}" class="nav-link">
               <i class="nav-icon fas fa-tree"></i>
               <p>
-                Product request
+                Product Requests
                 <!-- <i class="fas fa-angle-left right"></i> -->
               </p>
             </a>
@@ -121,7 +121,7 @@
             <a href="{{ url('ListUserProduct')}}" class="nav-link">
               <i class="nav-icon fas fa-tree"></i>
               <p>
-                 Product
+                 Products
               </p>
             </a>
           </li>
@@ -129,11 +129,11 @@
             <a href="{{ url('ListSellProduct')}}" class="nav-link">
               <i class="nav-icon fas fa-tree"></i>
               <p>
-                 Sell Product
+                 Sell Products
               </p>
             </a>
           </li>
-          
+
 
 
         </ul>

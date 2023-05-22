@@ -1,25 +1,29 @@
 @extends("master")
 @section("css")
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" integrity="sha512-3pIirOrwegjM6erE5gPSwkUzO+3cTjpnV9lexlNZqvupR64iZBnOOTiiLPb9M36zpMScbmUNIcHUqKD47M719g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
+<style type="text/css">
+    .buttoncolor{
+        color:#ffff;
+}
+</style>
 @endsection
 @section("content")
 
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
-    <div class="content-header">
-      <div class="container-fluid">
-        <div class="row mb-2">
-          <div class="col-sm-6">
-            <h1 class="m-0">Add Payment</h1>
-          </div>
-          <div class="col-sm-6">
-            <ol class="breadcrumb float-sm-right">
-            <li><a href="{{url('ListPayment')}}"><button class="btn btn-secondary btn-sm">Go Back</button></a></li>
-            </ol>
+   <div class="card-body ">
+        <div class="callout callout-success">
+          <div class="row">
+            <div class="col-11">
+               <h3>Add Payment</h3>
+            </div>
+            <div class="col-1">
+                <div class="btn-group btn-group-sm ">
+                     <a href="{{url('ListPayment')}}" class="btn btn-success "><i class="fas fa-arrow-right buttoncolor"></i></a>
+                </div>
+            </div>
           </div>
         </div>
-      </div>
     </div>
     <!-- /.content-header -->
 
