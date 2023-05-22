@@ -5,55 +5,45 @@
   <link rel="stylesheet" href="../../plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
   <link rel="stylesheet" href="../../plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
   <style type="text/css">
-      .edit_icon{
-      width: 23px;
-      }
-      /* .edit_icon:hover{
-      width: 30px;
-      } */
-      .delete_icon{
-      width: 25px;
-      }
-      /* .delete_icon:hover{
-      width: 32px;
-      } */
-
+        .buttoncolor{
+          color:#ffff;
+  }
   </style>
-@endsection
+@endsecti on
 @section("content")
-  <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-    <div class="card-body ">
-        <div class="callout callout-success">
-          <div class="row">
-            <div class="col-11">
-                <h1>Raw Material</h1>
-            </div>
-            <div class="col-1">
-                <div class="btn-group btn-group-sm ">
-                     <a href="{{url('Rawmaterial')}}" class="btn btn-success "><i class="fas fa-plus buttoncolor"></i></a>
+   <!-- Content Wrapper. Contains page content -->
+ <div class="content-wrapper main">
+       <!-- Content Header (Page header) -->
+          <!-- /.card-header -->
+          <div class="card-body ">
+                <div class="callout callout-success">
+                  <div class="row">
+                    <div class="col-11">
+                       <h3>Raw Materials</h3>
+                    </div>
+                    <div class="col-1">
+                        <div class="btn-group btn-group-sm ">
+                             <a href="{{url('Rawmaterial')}}" class="btn btn-success "><i class="fas fa-plus buttoncolor"></i></a>
+                        </div>
+                    </div>
+                  </div>
                 </div>
             </div>
-          </div>
-        </div>
-    </div>
-
+              <!-- /.card-body -->
+    <!-- /.content-header -->
 
     <!-- Main content -->
-    <section class="content">
+    <div class="content">
       <div class="container-fluid">
         <div class="row">
-          {{-- <div class="col-10"> --}}
-            <div class="col-lg-12">
-          {{-- <a href="{{url('Rawmaterial')}}"><button class="btn btn-success btn-sm">Add Rawmaterial </button></a> --}}
-          <br>
-          <br>
+          <!-- /.col-md-6 -->
+          <div class="col-lg-12">
+
             <div class="card">
-              <!-- /.card-header -->
               <div class="card-body">
                 <table id="example1" class="table table-bordered table-striped">
                   <thead>
+                  <tr>
                   <tr>
                     <th>Id</th>
                     <th>Name</th>
@@ -66,44 +56,31 @@
                   <tbody>
                   @foreach($data as $data)
                       <tr>
-                    <td>{{$data->id}}</td>
-                    <td>{{$data->name}}</td>
-                    <td>{{$data->category}}</td>
-                    <td>{{$data->units}}</td>
-                    <td>{{$data->quantity}}</td>
+                        <td>{{$data->id}}</td>
+                        <td>{{$data->name}}</td>
+                        <td>{{$data->category}}</td>
+                        <td>{{$data->units}}</td>
+                        <td>{{$data->quantity}}</td>
                     <td class="text-center py-0 align-middle">
-                    <div class="btn-group btn-group-sm">
-                        <a href="{{url('editRawmaterial',$data->id)}}" class="btn btn-primary"><i class="fas fa-pen"></i></a>
+                        <a href="{{url('editRawmaterial',$data->id)}}" class="btn btn-info"><i class="fas fa-pen"></i></a>
                         <a
                         onclick="return confirm('Are you sure  you want to delete')"
                          href="{{url('deleteRawmaterial',$data->id)}}" class="btn btn-danger"><i class="fas fa-trash"></i></a>
-                      </div>
+
                       </td>
                        </tr>
                       @endforeach
                   </tbody>
-                  <tfoot>
-                  {{-- <tr>
-                  <th>Id</th>
-                    <th>Name</th>
-                    <th>Category</th>
-                    <th>Units</th>
-                    <th>Quantity</th>
-                    <th>Actions</th>
-                  </tr> --}}
-                  </tfoot>
                 </table>
               </div>
               <!-- /.card-body -->
             </div>
-            <!-- /.card -->
           </div>
-          <!-- /.col -->
+          <!-- /.col-md-6 -->
         </div>
         <!-- /.row -->
-      </div>
-      <!-- /.container-fluid -->
-    </section>
+      </div><!-- /.container-fluid -->
+    </div>
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
