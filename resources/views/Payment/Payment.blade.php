@@ -53,7 +53,7 @@
                      <input type="date" name="date" class="form-control" id="exampleInputCategory" required>
                   </div>
                   <div class="form-group col-md-12"">
-                     <button type="submit" class="btn btn-primary">Submit</button>
+                     <button type="submit" class="btn btn-success">Submit</button>
                   </div>
          </form>
          </div>
