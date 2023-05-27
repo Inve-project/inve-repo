@@ -5,11 +5,8 @@
   <link rel="stylesheet" href="../../plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
   <link rel="stylesheet" href="../../plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
   <style type="text/css">
-      .edit_icon{
-      width: 23px;
-      }
-      .delete_icon{
-      width: 25px;
+      .buttoncolor{
+        color: #ffff;
       }
   </style>
 @endsection
@@ -21,7 +18,7 @@
         <div class="callout callout-success">
           <div class="row">
             <div class="col-11">
-                <h1>Product</h1>
+               <h3>Product</h3>
             </div>
             <div class="col-1">
                 <div class="btn-group btn-group-sm ">
@@ -31,7 +28,6 @@
           </div>
         </div>
     </div>
-
 
     <!-- Main content -->
     <section class="content">
@@ -64,13 +60,14 @@
                     <td>{{$data->category}}</td>
                     <td>{{$data->units}}</td>
                     <td>{{$data->quantity}}</td>
-
-                     <td>
-                            <a href="{{url('editProduct',$data->id)}}"><img class="edit_icon" src="img/edit.jpg" alt="icon"></a>
-
-                             <a onclick="return confirm('Are you sure  you want to delete')"
-                             href="{{url('deleteProduct',$data->id)}}"><img class="delete_icon" src="img/delete.jpg" alt="icon"></a>
-                       </td>
+                    <td class="text-center py-0 align-middle">
+                    <div class="btn-group btn-group-sm">
+                        <a href="{{url('editProduct',$data->id)}}" class="btn btn-primary"><i class="fas fa-pen"></i></a>
+                        <a
+                        onclick="return confirm('Are you sure  you want to delete')"
+                         href="{{url('deleteProduct',$data->id)}}" class="btn btn-danger"><i class="fas fa-trash"></i></a>
+                      </div>
+                      </td>
                        </tr>
                       @endforeach
                   </tbody>

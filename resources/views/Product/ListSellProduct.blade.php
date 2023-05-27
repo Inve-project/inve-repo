@@ -22,9 +22,11 @@
                        <h3>Sold Product</h3>
                     </div>
                     <div class="col-1">
+                    @if (Auth::user()->id == 3)
                         <div class="btn-group btn-group-sm ">
                              <a href="{{url('SellProductform')}}" class="btn btn-success "><i class="fas fa-plus buttoncolor"></i></a>
                         </div>
+                        @endif
                     </div>
                   </div>
                 </div>

@@ -1,26 +1,16 @@
 @extends("master")
 @section("css")
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" integrity="sha512-3pIirOrwegjM6erE5gPSwkUzO+3cTjpnV9lexlNZqvupR64iZBnOOTiiLPb9M36zpMScbmUNIcHUqKD47M719g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-@endsection
+<style type="text/css">
+   .buttoncolor{
+    color: #ffff;
+   }
+  </style>
+  @endsection
 @section("content")
 
-<div class="content-wrapper">
+<div class="content-wrapper main">
     <!-- Content Header (Page header) -->
-    {{-- <div class="content-header">
-      <div class="container-fluid">
-        <div class="row mb-2">
-          <div class="col-sm-6">
-            <h1 class="m-0">Add Product</h1>
-          </div>
-          <div class="col-sm-6">
-            <ol class="breadcrumb float-sm-right">
-            <li><a href="{{url('ListProduct')}}"><button class="btn btn-secondary btn-sm">Go Back</button></a></li>
-            </ol>
-          </div>
-        </div>
-      </div>
-    </div> --}}
     <div class="card-body ">
         <div class="callout callout-success">
           <div class="row">
@@ -73,7 +63,7 @@
                      </select>
                   </div>
                   <div class="form-group col-md-12"">
-                     <button type="submit" class="btn btn-primary">Submit</button>
+                     <button type="submit" class="btn btn-success">Submit</button>
                   </div>
          </form>
          </div>

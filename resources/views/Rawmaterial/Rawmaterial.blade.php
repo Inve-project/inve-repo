@@ -1,34 +1,41 @@
 @extends("master")
 @section("css")
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" integrity="sha512-3pIirOrwegjM6erE5gPSwkUzO+3cTjpnV9lexlNZqvupR64iZBnOOTiiLPb9M36zpMScbmUNIcHUqKD47M719g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
+<style type="text/css">  
+      .buttoncolor{
+          color:#ffff;
+  }
+  </style>
 @endsection
 @section("content")
-
-<div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-    <div class="content-header">
-      <div class="container-fluid">
-        <div class="row mb-2">
-          <div class="col-sm-6">
-            <h1 class="m-0">Add Raw Material</h1>
-          </div>
-          <div class="col-sm-6">
-            <ol class="breadcrumb float-sm-right">
-            <li><a href="{{url('ListRawmaterial')}}"><button class="btn btn-secondary btn-sm">Go Back</button></a></li>
-            </ol>
-          </div>
-        </div>
-      </div>
-    </div>
+   <!-- Content Wrapper. Contains page content -->
+   <div class="content-wrapper main">
+       <!-- Content Header (Page header) -->
+          <!-- /.card-header -->
+          <div class="card-body ">
+                <div class="callout callout-success">
+                  <div class="row">
+                    <div class="col-11">
+                       <h3>Add Raw Material</h3>
+                    </div>
+                    <div class="col-1">
+                        <div class="btn-group btn-group-sm ">
+                             <a href="{{url('ListRawmaterial')}}" class="btn btn-success "><i class="fas fa-arrow-right buttoncolor"></i></a>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+              <!-- /.card-body -->
     <!-- /.content-header -->
+
 
     <!-- Main content -->
     <section class="content">
    <div class="container-fluid">
    <div class="row">
    <!-- left column -->
-   <div class="col-md-10">
+   <div class="col-md-12">
       <!-- jquery validation -->
       <div class="card card-primary">
          <!-- form start -->
@@ -59,7 +66,7 @@
                      </select>
                   </div>
                   <div class="form-group col-md-12"">
-                     <button type="submit" class="btn btn-primary">Submit</button>
+                     <button type="submit" class="btn btn-success">Submit</button>
                   </div>
          </form>
          </div>

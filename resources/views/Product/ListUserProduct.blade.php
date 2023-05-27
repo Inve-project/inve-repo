@@ -13,8 +13,6 @@
 @section("content")
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper main">
-       <!-- Content Header (Page header) -->
-          <!-- /.card-header -->
           <div class="card-body ">
                 <div class="callout callout-success">
                   <div class="row">

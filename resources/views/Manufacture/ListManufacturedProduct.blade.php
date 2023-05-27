@@ -5,44 +5,36 @@
   <link rel="stylesheet" href="../../plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
   <link rel="stylesheet" href="../../plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
   <style type="text/css">  
-      .edit_icon{
-      width: 23px;
-      }
-      /* .edit_icon:hover{
-      width: 30px;
-      } */
-      .delete_icon{
-      width: 25px;
-      }
-      /* .delete_icon:hover{
-      width: 32px;
-      } */
-     
+       .buttoncolor{
+          color:#ffff;
+  }
   </style> 
 @endsection
 @section("content")
   <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-    <section class="content-header">
-      <div class="container-fluid">
-        <div class="row mb-2">
-          <div class="col-sm-6">
-            <h1>Manufactured Product</h1>
-          </div>
-        </div>
-      </div><!-- /.container-fluid -->
-    </section>
-    
+  <div class="content-wrapper main">
+          <div class="card-body ">
+                <div class="callout callout-success">
+                  <div class="row">
+                    <div class="col-11">
+                       <h3>Manufactured Product</h3>
+                    </div>
+                    <div class="col-1">
+                        <div class="btn-group btn-group-sm ">
+                             <a href="{{url('ManufacturedProduct')}}" class="btn btn-success "><i class="fas fa-plus buttoncolor"></i></a>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+              <!-- /.card-body -->
+    <!-- /.content-header -->
 
     <!-- Main content -->
     <section class="content">
       <div class="container-fluid">
         <div class="row">
-          <div class="col-10">
-          <a href="{{url('ManufacturedProduct')}}"><button class="btn btn-success btn-sm">Add Product </button></a>
-          <br>
-          <br>
+          <div class="col-12">
             <div class="card">
               <!-- /.card-header -->
               <div class="card-body">
@@ -73,17 +65,6 @@
                        </tr>
                       @endforeach
                   </tbody>
-                  <tfoot>
-                  <tr>
-                  <tr>
-                    <th>Id</th>
-                    <th>Product</th>
-                    <th>Quantity</th>
-                    <th>Intake</th>
-                    <th>Date</th>
-                    <th>Actions</th>
-                  </tr>
-                  </tfoot>
                 </table>
               </div>
               <!-- /.card-body -->

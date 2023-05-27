@@ -127,6 +127,14 @@ Route::get('/ListSellProduct', [App\Http\Controllers\Product\SellProductControll
 Route::get('/SellProductform', [App\Http\Controllers\Product\SellProductController::class, 'SellProductform']);
 Route::post('/Addsellproduct', [App\Http\Controllers\Product\SellProductController::class, 'Addsellproduct']);
 
+  /*                             Vendor
+                   ##########################################*/
+Route::get('/Vendor', [App\Http\Controllers\Vendor\VendorController::class, 'Vendor']);
+Route::post('/AddVendor', [App\Http\Controllers\Vendor\VendorController::class, 'AddVendor']);
+Route::get('/ListVendor', [App\Http\Controllers\Vendor\VendorController::class, 'ListVendor']);
+Route::get('/editVendor/{id}', [App\Http\Controllers\Vendor\VendorController::class, 'editVendor']);
+Route::get('/deleteVendor/{id}', [App\Http\Controllers\Vendor\VendorController::class, 'deleteVendor']);
+Route::post('/updateVendor/{id}', [App\Http\Controllers\Vendor\VendorController::class, 'updateVendor']);
 
 
 Route::get('logs', [\Rap2hpoutre\LaravelLogViewer\LogViewerController::class, 'index']);

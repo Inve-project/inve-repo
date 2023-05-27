@@ -1,40 +1,44 @@
 @extends("master")
 @section("css")
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" integrity="sha512-3pIirOrwegjM6erE5gPSwkUzO+3cTjpnV9lexlNZqvupR64iZBnOOTiiLPb9M36zpMScbmUNIcHUqKD47M719g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-@endsection
+<style type="text/css">
+    .buttoncolor{
+      color: #ffff;
+    }
+  </style>
+  @endsection
 @section("content")
-
-<div class="content-wrapper">
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper main">
     <!-- Content Header (Page header) -->
-    <div class="content-header">
-      <div class="container-fluid">
-        <div class="row mb-2">
-          <div class="col-sm-6">
-            <h1 class="m-0">Update Raw Material Units</h1>
-          </div>
-          <div class="col-sm-6">
-            <ol class="breadcrumb float-sm-right">
-              <li><a href="{{url('ListRawmaterial')}}"><button class="btn btn-secondary btn-sm">Go Back</button></a></li>
-            </ol>
+    <div class="card-body ">
+        <div class="callout callout-success">
+          <div class="row">
+            <div class="col-11">
+                <h3>Update Raw Material Units</h3>
+            </div>
+            <div class="col-1">
+                <div class="btn-group btn-group-sm ">
+                     <a href="{{url('ListRawmaterial')}}" class="btn btn-success "><i class="fas fa-plus buttoncolor"></i></a>
+                </div>
+            </div>
           </div>
         </div>
-      </div>
     </div>
-    <!-- /.content-header -->
 
     <!-- Main content -->
     <section class="content">
       <div class="container-fluid">
         <div class="row">
           <!-- left column -->
-          <div class="col-md-8">
+          <div class="col-md-12">
             <!-- jquery validation -->
             <div class="card card-primary">
               <!-- form start -->
             <form  method="POST" action="{{url('updateRawmaterial',$data->id)}}" class="row g-3">
             @csrf
             <div class="card-body">
-               <div class="row col-md-8">
+               <div class="row col-md-10">
                   <div class="form-group col-md-12"">
                      <label >Raw material Name: {{$data->name}}</label>
                   </div>
@@ -57,7 +61,7 @@
                      </select>
                   </div>
                   <div class="form-group col-md-12"">
-                     <button type="submit" class="btn btn-primary">Submit</button>
+                     <button type="submit" class="btn btn-success">Submit</button>
                   </div>
          </form>
             </div>

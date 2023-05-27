@@ -5,32 +5,30 @@
   <link rel="stylesheet" href="../../plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
   <link rel="stylesheet" href="../../plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
   <style type="text/css">
-   .buttoncolor{
-    color: #ffff;
-   }
+      .buttoncolor{
+        color: #ffff;
+      }
   </style>
 @endsection
 @section("content")
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper main">
-       <!-- Content Header (Page header) -->
-          <!-- /.card-header -->
-          <div class="card-body ">
-            <div class="callout callout-success">
-              <div class="row">
-                <div class="col-11">
-                   <h3>Product categories</h3>
-                </div>
-                <div class="col-1">
-                    <div class="btn-group btn-group-sm ">
-                         <a href="{{url('ProductCategory')}}" class="btn btn-success "><i class="fas fa-plus buttoncolor"></i></a>
-                    </div>
-                </div>
-              </div>
+    <!-- Content Header (Page header) -->
+    <div class="card-body ">
+        <div class="callout callout-success">
+          <div class="row">
+            <div class="col-11">
+               <h3>Vendor</h3>
             </div>
+            <div class="col-1">
+                <div class="btn-group btn-group-sm ">
+                     <a href="{{url('Vendor')}}" class="btn btn-success "><i class="fas fa-plus buttoncolor"></i></a>
+                </div>
+            </div>
+          </div>
         </div>
-          <!-- /.card-body -->
-<!-- /.content-header -->
+    </div>
+
 
     <!-- Main content -->
     <section class="content">
@@ -38,7 +36,7 @@
         <div class="row">
           {{-- <div class="col-6"> --}}
             <div class="col-lg-12">
-          {{-- <a href="{{url('ProductCategory')}}"><button class="btn btn-success btn-sm">Add Category</button></a> --}}
+          {{-- <a href="{{url('Vendor')}}"><button class="btn btn-success btn-sm">Add Units</button></a> --}}
           <br>
           <br>
             <div class="card">
@@ -47,8 +45,8 @@
                 <table id="example1" class="table table-bordered table-striped">
                   <thead>
                   <tr>
-                    <th>Category Id</th>
-                    <th>Category name</th>
+                    <th>Id</th>
+                    <th>Vendor name</th>
                     <th>Actions</th>
                   </tr>
                   </thead>
@@ -60,10 +58,10 @@
 
                     <td class="text-center py-0 align-middle">
                     <div class="btn-group btn-group-sm">
-                        <a href="{{url('editProductCategory',$data->id)}}" class="btn btn-primary"><i class="fas fa-pen"></i></a>
+                        <a href="{{url('editVendor',$data->id)}}" class="btn btn-primary"><i class="fas fa-pen"></i></a>
                         <a
                         onclick="return confirm('Are you sure  you want to delete')"
-                         href="{{url('deleteProductCategory',$data->id)}}" class="btn btn-danger"><i class="fas fa-trash"></i></a>
+                         href="{{url('deleteVendor',$data->id)}}" class="btn btn-danger"><i class="fas fa-trash"></i></a>
                       </div>
                       </td>
                        </tr>
@@ -71,8 +69,8 @@
                   </tbody>
                   <tfoot>
                   {{-- <tr>
-                  <th>Category Id</th>
-                    <th>Category name(s)</th>
+                  <th>Units Id</th>
+                    <th>Units name(s)</th>
                     <th>Actions</th>
                   </tr> --}}
                   </tfoot>

@@ -5,19 +5,9 @@
   <link rel="stylesheet" href="../../plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
   <link rel="stylesheet" href="../../plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
   <style type="text/css">
-      .edit_icon{
-      width: 23px;
-      }
-      .edit_icon:hover{
-      width: 30px;
-      }
-      .delete_icon{
-      width: 25px;
-      }
-      .delete_icon:hover{
-      width: 32px;
-      }
-
+    .buttoncolor{
+      color: #ffff;
+    }
   </style>
 @endsection
 @section("content")
@@ -29,7 +19,7 @@
                 <div class="callout callout-success">
                   <div class="row">
                     <div class="col-11">
-                       <h3>Product units</h3>
+                       <h3>Rawmaterial units</h3>
                     </div>
                     <div class="col-1">
                         <div class="btn-group btn-group-sm ">
@@ -41,13 +31,14 @@
             </div>
 
 
-    <!-- Main content -->
+
+                <!-- Main content -->
     <section class="content">
       <div class="container-fluid">
         <div class="row">
           {{-- <div class="col-6"> --}}
             <div class="col-lg-12">
-          {{-- <a href="{{url('RawmaterialUnits')}}"><button class="btn btn-success btn-sm">Add Units</button></a> --}}
+          {{-- <a href="{{url('Vendor')}}"><button class="btn btn-success btn-sm">Add Units</button></a> --}}
           <br>
           <br>
             <div class="card">
@@ -56,7 +47,7 @@
                 <table id="example1" class="table table-bordered table-striped">
                   <thead>
                   <tr>
-                    <th>Units Id</th>
+                    <th>Id</th>
                     <th>Units name</th>
                     <th>Actions</th>
                   </tr>
@@ -64,16 +55,16 @@
                   <tbody>
                   @foreach($data as $data)
                       <tr>
-                    <td>{{$data->id}}</td>
+                      <td>{{$data->id}}</td>
                     <td>{{$data->Units_name}}</td>
 
-                    <td  >
-
-                        <a href="{{url('editRawmaterialUnits',$data->id)}}"> <img class="edit_icon" src="img/edit.jpg" alt="icon"></a>
+                    <td class="text-center py-0 align-middle">
+                    <div class="btn-group btn-group-sm">
+                        <a href="{{url('editRawmaterialUnits',$data->id)}}" class="btn btn-primary"><i class="fas fa-pen"></i></a>
                         <a
                         onclick="return confirm('Are you sure  you want to delete')"
-                         href="{{url('deleteRawmaterialUnitsy',$data->id)}}"><img class="delete_icon" src="img/delete.jpg" alt="icon"></a>
-
+                         href="{{url('deleteRawmaterialUnitsy',$data->id)}}" class="btn btn-danger"><i class="fas fa-trash"></i></a>
+                      </div>
                       </td>
                        </tr>
                       @endforeach
@@ -98,6 +89,9 @@
       <!-- /.container-fluid -->
     </section>
     <!-- /.content -->
+
+
+ 
   </div>
   <!-- /.content-wrapper -->
   @endsection

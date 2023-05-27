@@ -4,6 +4,10 @@
       <img src="dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
       <span class="brand-text font-weight-light">Inventory System</span>
     </a>
+    <a href="{{ url('/dashboard')}}" class="brand-link">
+      <img src="dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+      <span class="brand-text font-weight-light">{{ Auth::user()->name }}</span>
+    </a>
 
     <!-- Sidebar -->
     <div class="sidebar">
@@ -13,13 +17,22 @@
       <!-- Sidebar Menu -->
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-          
+        @if (Auth::user()->id == 1)
           <li class="nav-item">
             <a href="{{ url('dashboard')}}" class="nav-link">
               <i class="nav-icon fas fa-chart-pie"></i>
               <p>
                 Dashbord
-                <i class="right fas fa-angle-left"></i>
+                <!-- <i class="right fas fa-angle-left"></i> -->
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="{{ url('ListVendor')}}" class="nav-link">
+              <i class="nav-icon fas fa-tree"></i>
+              <p>
+                Vendor
+                <!-- <i class="fas fa-angle-left right"></i> -->
               </p>
             </a>
           </li>
@@ -86,7 +99,6 @@
               <i class="nav-icon fas fa-tree"></i>
               <p>
                 Payment
-                <!-- <i class="fas fa-angle-left right"></i> -->
               </p>
             </a>
           </li>
@@ -95,7 +107,6 @@
               <i class="nav-icon fas fa-tree"></i>
               <p>
                 UsedRawmaterial
-                <!-- <i class="fas fa-angle-left right"></i> -->
               </p>
             </a>
           </li>
@@ -104,7 +115,6 @@
               <i class="nav-icon fas fa-tree"></i>
               <p>
                 ManufacturedProduct
-                <!-- <i class="fas fa-angle-left right"></i> -->
               </p>
             </a>
           </li>
@@ -133,9 +143,82 @@
               </p>
             </a>
           </li>
-          
-
-
+          <li>
+          @elseif (Auth::user()->id == 2)
+          <li class="nav-item">
+            <a href="{{ url('ListRawmaterial')}}" class="nav-link">
+              <i class="nav-icon fas fa-tree"></i>
+              <p>
+              Raw material
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="{{ url('ListProduct')}}" class="nav-link">
+              <i class="nav-icon fas fa-tree"></i>
+              <p>
+                Product
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="{{ url('ListUsedRawmaterial')}}" class="nav-link">
+              <i class="nav-icon fas fa-tree"></i>
+              <p>
+                UsedRawmaterial
+                <!-- <i class="fas fa-angle-left right"></i> -->
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="{{ url('ListManufacturedProduct')}}" class="nav-link">
+              <i class="nav-icon fas fa-tree"></i>
+              <p>
+                ManufacturedProduct
+                <!-- <i class="fas fa-angle-left right"></i> -->
+              </p>
+            </a>
+          </li>
+            @elseif (Auth::user()->id == 3)
+            <li class="nav-item">
+            <a href="{{ url('ListRequestProduct')}}" class="nav-link">
+              <i class="nav-icon fas fa-tree"></i>
+              <p>
+                Product request
+                <!-- <i class="fas fa-angle-left right"></i> -->
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="{{ url('ListUserProduct')}}" class="nav-link">
+              <i class="nav-icon fas fa-tree"></i>
+              <p>
+                 Product
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="{{ url('ListSellProduct')}}" class="nav-link">
+              <i class="nav-icon fas fa-tree"></i>
+              <p>
+                 Sell Product
+              </p>
+            </a>
+          </li>
+          <li>
+            @endif
+          <li class="nav-item">
+            <a href="{{ route('logout') }}" class="nav-link"  onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+              <i class="nav-icon fas fa-tree"></i>
+              <p>
+              Logout
+              </p>
+            </a>
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                 @csrf
+              </form>
+          </li>
+          <li>
         </ul>
       </nav>
       <!-- /.sidebar-menu -->

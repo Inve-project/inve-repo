@@ -5,24 +5,14 @@
   <link rel="stylesheet" href="../../plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
   <link rel="stylesheet" href="../../plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
   <style type="text/css">
-      .edit_icon{
-      width: 23px;
+      .buttoncolor{
+        color: #ffff;
       }
-      .edit_icon:hover{
-      width: 30px;
-      }
-      .delete_icon{
-      width: 25px;
-      }
-      .delete_icon:hover{
-      width: 32px;
-      }
-
   </style>
 @endsection
 @section("content")
   <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
+  <div class="content-wrapper main">
     <!-- Content Header (Page header) -->
     <div class="card-body ">
         <div class="callout callout-success">

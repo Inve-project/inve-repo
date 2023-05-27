@@ -5,30 +5,20 @@
   <link rel="stylesheet" href="../../plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
   <link rel="stylesheet" href="../../plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
   <style type="text/css">
-      .edit_icon{
-      width: 23px;
-      }
-      /* .edit_icon:hover{
-      width: 30px;
-      } */
-      .delete_icon{
-      width: 25px;
-      }
-      /* .delete_icon:hover{
-      width: 32px;
-      } */
-
+    .buttoncolor{
+      color: #ffff;
+    }
   </style>
 @endsection
 @section("content")
   <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
+  <div class="content-wrapper main">
     <!-- Content Header (Page header) -->
     <div class="card-body ">
         <div class="callout callout-success">
           <div class="row">
             <div class="col-11">
-                <h1>Raw Material</h1>
+                <h3>Raw Material</h3>
             </div>
             <div class="col-1">
                 <div class="btn-group btn-group-sm ">
@@ -38,17 +28,12 @@
           </div>
         </div>
     </div>
-
-
     <!-- Main content -->
+
     <section class="content">
       <div class="container-fluid">
         <div class="row">
-          {{-- <div class="col-10"> --}}
             <div class="col-lg-12">
-          {{-- <a href="{{url('Rawmaterial')}}"><button class="btn btn-success btn-sm">Add Rawmaterial </button></a> --}}
-          <br>
-          <br>
             <div class="card">
               <!-- /.card-header -->
               <div class="card-body">

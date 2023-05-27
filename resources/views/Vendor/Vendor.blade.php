@@ -1,49 +1,46 @@
 @extends("master")
 @section("css")
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" integrity="sha512-3pIirOrwegjM6erE5gPSwkUzO+3cTjpnV9lexlNZqvupR64iZBnOOTiiLPb9M36zpMScbmUNIcHUqKD47M719g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-<style type="text/css">  
+<style type="text/css">
       .buttoncolor{
-          color:#ffff;
-  }
+        color: #ffff;
+      }
   </style>
 @endsection
 @section("content")
-   <!-- Content Wrapper. Contains page content -->
-   <div class="content-wrapper main">
-       <!-- Content Header (Page header) -->
-          <!-- /.card-header -->
-          <div class="card-body ">
-                <div class="callout callout-success">
-                  <div class="row">
-                    <div class="col-11">
-                       <h3>Add Raw Material Units</h3>
-                    </div>
-                    <div class="col-1">
-                        <div class="btn-group btn-group-sm ">
-                             <a href="{{url('ListRawmaterialUnits')}}" class="btn btn-success "><i class="fas fa-arrow-right buttoncolor"></i></a>
-                        </div>
-                    </div>
-                  </div>
+
+<div class="content-wrapper main">
+    <!-- Content Header (Page header) -->
+    <div class="card-body ">
+        <div class="callout callout-success">
+          <div class="row">
+            <div class="col-11">
+               <h3>Vendor</h3>
+            </div>
+            <div class="col-1">
+                <div class="btn-group btn-group-sm ">
+                     <a href="{{url('ListVendor')}}" class="btn btn-success "><i class="fas fa-arrow-right buttoncolor"></i></a>
                 </div>
             </div>
-              <!-- /.card-body -->
+          </div>
+        </div>
+    </div>
     <!-- /.content-header -->
-
 
     <!-- Main content -->
     <section class="content">
       <div class="container-fluid">
         <div class="row">
           <!-- left column -->
-          <div class="col-md-8">
+          <div class="col-md-12">
             <!-- jquery validation -->
             <div class="card card-primary">
               <!-- form start -->
-              <form  method="POST" action="{{url('AddRawmaterialUnits')}}"class="row g-3">
+              <form  method="POST" action="{{url('AddVendor')}}"class="row g-3">
                 @csrf
                 <div class="card-body">
-                  <div class="form-group">
-                    <label >Units Name</label>
+                  <div class="form-group col-md-8" >
+                    <label >Vendor Name</label>
                     <input type="text" name="name" class="form-control" id="exampleInputUnits" placeholder="Enter Units Name" required>
                   </div>
                 <!-- /.card-body -->
