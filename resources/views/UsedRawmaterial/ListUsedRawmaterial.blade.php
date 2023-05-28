@@ -20,9 +20,11 @@
                        <h3>Used Raw material</h3>
                     </div>
                     <div class="col-1">
+                    @if (Auth::user()->id == 2)
                         <div class="btn-group btn-group-sm ">
                              <a href="{{url('UsedRawmaterial')}}" class="btn btn-success "><i class="fas fa-plus buttoncolor"></i></a>
                         </div>
+                    @endif
                     </div>
                   </div>
                 </div>
@@ -41,29 +43,27 @@
                 <table id="example1" class="table table-bordered table-striped">
                   <thead>
                   <tr>
-                    <th>Id</th>
-                    <th>User id</th>
+                    <th>S/N</th>
                     <th>Raw material</th>
-                    <th>Date</th>
                     <th>Quantity</th>
-                    <th>Name</th>
-                    <th>Actions</th>
+                    <th>intake</th>
+                    <th>Date</th>
+                    <!-- <th>Actions</th> -->
                   </tr>
                   </thead>
                   <tbody>
-                  @foreach($data as $data)
+                  @foreach($data as $index=>$data)
                       <tr>
-                    <td>{{$data->id}}</td>
-                    <td>{{$data->user_id}}</td>
-                    <td>{{$data->raw_material_id}}</td>
+                     <td>{{ $index +1 }}</td>
                     <td>{{$data->name}}</td>
                     <td>{{$data->quantity}}</td>
+                    <td>{{$data->intake}}</td>
                     <td>{{$data->date}}</td>
-                    <td class="text-center py-0 align-middle">
+                    <!-- <td class="text-center py-0 align-middle">
                     <div class="btn-group btn-group-sm">
                         <a href="{{url('#')}}" class="btn btn-primary"><i class="fas fa-eye"></i></a>
                       </div>
-                      </td>
+                      </td> -->
                        </tr>
                       @endforeach
                   </tbody>

@@ -60,7 +60,10 @@ class UsedRawmaterialController extends Controller
 
        public function ListUsedRawmaterial(){
 
-        $data = UsedRawmaterial::all();
+        $data = DB::table('used_rawmaterials')
+                  ->select('used_rawmaterials.id', 'rawmaterials.name','used_rawmaterials.quantity','used_rawmaterials.date','used_rawmaterials.intake')
+                  ->join('rawmaterials', 'used_rawmaterials.raw_material_id', '=', 'rawmaterials.id')
+                 ->get();
         return view('UsedRawmaterial.ListUsedRawmaterial',compact('data') );
 
         }

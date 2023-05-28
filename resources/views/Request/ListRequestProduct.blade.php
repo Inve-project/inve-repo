@@ -22,9 +22,11 @@
                        <h3>Requested products</h3>
                     </div>
                     <div class="col-1">
+                    @if (Auth::user()->id == 3)
                         <div class="btn-group btn-group-sm ">
                              <a href="{{url('RequestProduct')}}" class="btn btn-success "><i class="fas fa-plus buttoncolor"></i></a>
                         </div>
+                    @endif
                     </div>
                   </div>
                 </div>
@@ -44,38 +46,42 @@
                 <table id="example1" class="table table-bordered table-striped">
                   <thead>
                   <tr>
-                    <th>Id</th>
+                    <th>S/N</th>
                     <th>Product</th>
                     <th>Quantity</th>
                     <th>Date</th>
                     <th>Status</th>
+                 @if (Auth::user()->id == 2)
                     <th>Actions</th>
+                   @endif
                   </tr>
                   </thead>
                   <tbody>
-                  @foreach($data as $data)
+                  @foreach($data as $index => $data)
                       <tr>
-                    <td>{{$data->id}}</td>
-                    <td>{{$data->product_id}}</td>
+                    <td>{{ $index +1 }}</td>
+                    <td>{{$data->name}}</td>
                     <td>{{$data->quantity}}</td>
                     <td>{{$data->date}}</td>
                     <td><span class="badge badge-{{$data->color}}">{{$data->status}}</span></td>
+            @if (Auth::user()->id == 2)
                     <td class="text-center py-0 align-middle">
                     <div class="btn-group btn-group-sm">
                         <a
                         onclick="return confirm('Are you sure  you want to make changes')"
                          href="{{url('onprogress',$data->id)}}" class="btn btn-warning"><i class="fas fa-arrow-down"></i>
                         </a>
-                        <a
+                        <!-- <a
                         onclick="return confirm('Are you sure  you want to delete')"
                          href="{{url('deleteRawmaterial',$data->id)}}" class="btn btn-info"><i class="fas fa-eye"></i>
-                        </a>
+                        </a> -->
                          <a
                         onclick="return confirm('Are you sure  you want to make changes')"
                          href="{{url('approved',$data->id)}}" class="btn btn-success"><i class="fas fa-arrow-up"></i>
                         </a>
                       </div>
                       </td>
+                      @endif
                        </tr>
                       @endforeach
                   </tbody>

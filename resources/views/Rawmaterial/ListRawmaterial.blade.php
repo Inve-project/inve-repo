@@ -21,9 +21,11 @@
                 <h3>Raw Material</h3>
             </div>
             <div class="col-1">
+               @if (Auth::user()->id == 1)
                 <div class="btn-group btn-group-sm ">
                      <a href="{{url('Rawmaterial')}}" class="btn btn-success "><i class="fas fa-plus buttoncolor"></i></a>
                 </div>
+                @endif
             </div>
           </div>
         </div>
@@ -40,22 +42,25 @@
                 <table id="example1" class="table table-bordered table-striped">
                   <thead>
                   <tr>
-                    <th>Id</th>
+                    <th>S/N</th>
                     <th>Name</th>
                     <th>Category</th>
                     <th>Units</th>
                     <th>Quantity</th>
+                  @if (Auth::user()->id == 1)
                     <th>Actions</th>
+                  @endif
                   </tr>
                   </thead>
                   <tbody>
-                  @foreach($data as $data)
+                  @foreach($data as $index=>$data)
                       <tr>
-                    <td>{{$data->id}}</td>
+                      <td>{{ $index +1 }}</td>
                     <td>{{$data->name}}</td>
                     <td>{{$data->category}}</td>
                     <td>{{$data->units}}</td>
                     <td>{{$data->quantity}}</td>
+                  @if (Auth::user()->id == 1)
                     <td class="text-center py-0 align-middle">
                     <div class="btn-group btn-group-sm">
                         <a href="{{url('editRawmaterial',$data->id)}}" class="btn btn-primary"><i class="fas fa-pen"></i></a>
@@ -64,6 +69,7 @@
                          href="{{url('deleteRawmaterial',$data->id)}}" class="btn btn-danger"><i class="fas fa-trash"></i></a>
                       </div>
                       </td>
+                      @endif
                        </tr>
                       @endforeach
                   </tbody>

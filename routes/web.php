@@ -15,7 +15,6 @@ use Illuminate\Support\Facades\Route;
 Auth::routes();
 
 Route::get('/', function () {
-    // return view('welcome');
     return view('auth.login');
 });
 
@@ -23,8 +22,8 @@ Route::get('/demo', function () {
   return view('demo');
 });
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'dashboard'])->name('dashboard');
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'dashboard'])->name('dashboard');
 
   /*                              Rawmaterial Route
                      ##########################################*/
@@ -49,6 +48,9 @@ Route::get('/editRawmaterial/{id}', [App\Http\Controllers\Rawmaterial\Rawmateria
 Route::get('/deleteRawmaterial/{id}', [App\Http\Controllers\Rawmaterial\RawmaterialController::class, 'deleteRawmaterial']);
 Route::post('/updateRawmaterial/{id}', [App\Http\Controllers\Rawmaterial\RawmaterialController::class, 'updateRawmaterial']);
 
+Route::post('/AddPayRawmaterial', [App\Http\Controllers\Rawmaterial\RawmaterialController::class,'AddPayRawmaterial']);
+Route::get('/PayRawmaterial', [App\Http\Controllers\Rawmaterial\RawmaterialController::class,'PayRawmaterial']);
+Route::get('/ListPayRawmaterial', [App\Http\Controllers\Rawmaterial\RawmaterialController::class, 'ListPayRawmaterial']);
 
 
 

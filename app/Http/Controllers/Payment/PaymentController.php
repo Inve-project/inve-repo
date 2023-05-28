@@ -24,14 +24,12 @@ class PaymentController extends Controller
 
     public function Payment(){
 
-        // $data = Payment::all();
-        // return view('Payment.Payment',compact('data') );
+     
         return view('Payment.Payment');
 
     }
 
     public function AddPayment(Request $request){
-        $quantity = 0 ;
        $data=new Payment;
         $data->User_id=Auth::id();
         $data->name=$request->name;

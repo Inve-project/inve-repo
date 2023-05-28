@@ -41,7 +41,7 @@
                 <table id="example1" class="table table-bordered table-striped">
                   <thead>
                   <tr>
-                    <th>Id</th>
+                    <th>S/N</th>
                     <th>Name</th>
                     <th>Amount</th>
                     <th>Date</th>
@@ -49,9 +49,9 @@
                   </tr>
                   </thead>
                   <tbody>
-                  @foreach($data as $data)
+                  @foreach($data as $index=>$data)
                       <tr>
-                    <td>{{$data->id}}</td>
+                    <td>{{ $index +1 }}</td>
                     <td>{{$data->name}}</td>
                     <td>{{$data->amount}}</td>
                     <td>{{$data->date}}</td>

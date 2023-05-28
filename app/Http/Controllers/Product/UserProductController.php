@@ -27,7 +27,11 @@ class UserProductController extends Controller
     
      public function ListUserProduct(){
 
-            $data = UserProduct::all();
+            $data = DB::table('user_products')
+                        ->select('user_products.id','products.name','user_products.category','user_products.units','user_products.quantity')
+                       ->join('products', 'user_products.product_id', '=', 'products.id')
+                       ->get();
+
             return view('Product.ListUserProduct',compact('data') );
 
             }

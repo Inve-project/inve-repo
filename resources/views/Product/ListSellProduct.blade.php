@@ -47,7 +47,7 @@
                   <thead>
                   <tr>
                   <tr>
-                    <th>Id</th>
+                    <th>S/N</th>
                     <td>product_id</td>
                     <td>Quantity</td>
                     <td>Amount</td>
@@ -56,10 +56,10 @@
                   </tr>
                   </thead>
                   <tbody>
-                  @foreach($data as $data)
+                  @foreach($data as $index=>$data)
                       <tr>
-                      <td>{{$data->id}}</td>
-                    <td>{{$data->product_id}}</td>
+                      <td>{{ $index +1 }}</td>
+                    <td>{{$data->name}}</td>
                     <td>{{$data->quantity}}</td>
                     <td>{{$data->amount}}</td>
                     <td>{{$data->date}}</td>

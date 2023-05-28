@@ -20,9 +20,11 @@
                        <h3>Manufactured Product</h3>
                     </div>
                     <div class="col-1">
+                      @if (Auth::user()->id == 2)
                         <div class="btn-group btn-group-sm ">
                              <a href="{{url('ManufacturedProduct')}}" class="btn btn-success "><i class="fas fa-plus buttoncolor"></i></a>
                         </div>
+                     @endif
                     </div>
                   </div>
                 </div>
@@ -41,27 +43,27 @@
                 <table id="example1" class="table table-bordered table-striped">
                   <thead>
                   <tr>
-                    <th>Id</th>
+                    <th>S/N</th>
                     <th>Product</th>
                     <th>Quantity</th>
                     <th>Intake</th>
                     <th>Date</th>
-                    <th>Actions</th>
+                    <!-- <th>Actions</th> -->
                   </tr>
                   </thead>
                   <tbody>
-                  @foreach($data as $data)
+                  @foreach($data as $index=>$data)
                       <tr>
-                    <td>{{$data->id}}</td>
-                    <td>{{$data->product_id}}</td>
+                   <td>{{ $index +1 }}</td>
+                    <td>{{$data->name}}</td>
                     <td>{{$data->quantity}}</td>
                     <td>{{$data->Intake}}</td>
                     <td>{{$data->date}}</td>
-                    <td class="text-center py-0 align-middle">
+                    <!-- <td class="text-center py-0 align-middle">
                     <div class="btn-group btn-group-sm">
                         <a href="{{url('editRawmaterial',$data->id)}}" class="btn btn-primary"><i class="fas fa-eye"></i></a>
                       </div>
-                      </td>
+                      </td> -->
                        </tr>
                       @endforeach
                   </tbody>

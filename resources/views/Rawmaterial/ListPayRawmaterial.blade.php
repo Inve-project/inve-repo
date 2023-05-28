@@ -5,9 +5,9 @@
   <link rel="stylesheet" href="../../plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
   <link rel="stylesheet" href="../../plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
   <style type="text/css">
-      .buttoncolor{
-        color: #ffff;
-      }
+    .buttoncolor{
+      color: #ffff;
+    }
   </style>
 @endsection
 @section("content")
@@ -18,20 +18,18 @@
         <div class="callout callout-success">
           <div class="row">
             <div class="col-11">
-               <h3>Product</h3>
+                <h3>Purchase Raw material</h3>
             </div>
             <div class="col-1">
-            @if (Auth::user()->id == 1)
                 <div class="btn-group btn-group-sm ">
-                     <a href="{{url('Product')}}" class="btn btn-success "><i class="fas fa-plus buttoncolor"></i></a>
+                     <a href="{{url('PayRawmaterial')}}" class="btn btn-success "><i class="fas fa-plus buttoncolor"></i></a>
                 </div>
-             @endif
             </div>
           </div>
         </div>
     </div>
-
     <!-- Main content -->
+
     <section class="content">
       <div class="container-fluid">
         <div class="row">
@@ -44,35 +42,33 @@
                   <tr>
                     <th>S/N</th>
                     <th>Name</th>
-                    <th>Category</th>
-                    <th>Units</th>
                     <th>Quantity</th>
-                  @if (Auth::user()->id == 1)
-                    <th>Actions</th>
-                    @endif
+                    <th>Amount</th>
+                    <th>Vendor</th>
+                    <th>date</th>
+                    <!-- <th>Actions</th> -->
                   </tr>
                   </thead>
                   <tbody>
                   @foreach($data as $index=>$data)
                       <tr>
-                    <td>{{ $index +1 }}</td>
+                      <td>{{ $index +1 }}</td>
                     <td>{{$data->name}}</td>
-                    <td>{{$data->category}}</td>
-                    <td>{{$data->units}}</td>
                     <td>{{$data->quantity}}</td>
-                  @if (Auth::user()->id == 1)
-                    <td class="text-center py-0 align-middle">
+                    <td>{{$data->amount}}</td>
+                    <td>{{$data->vendor}}</td>
+                    <td>{{$data->date}}</td>
+                    <!-- <td class="text-center py-0 align-middle">
                     <div class="btn-group btn-group-sm">
-                        <a href="{{url('editProduct',$data->id)}}" class="btn btn-primary"><i class="fas fa-pen"></i></a>
-                        <a
-                        onclick="return confirm('Are you sure  you want to delete')"
-                         href="{{url('deleteProduct',$data->id)}}" class="btn btn-danger"><i class="fas fa-trash"></i></a>
+                        <a href="{{url('editRawmaterial',$data->id)}}" class="btn btn-primary"><i class="fas fa-pen"></i></a>
+                        <a  onclick="return confirm('Are you sure  you want to delete')"
+                         href="{{url('deleteRawmaterial',$data->id)}}" class="btn btn-danger"><i class="fas fa-trash"></i></a>
                       </div>
-                      </td>
-                      @endif
+                      </td> -->
                        </tr>
                       @endforeach
                   </tbody>
+               
                 </table>
               </div>
               <!-- /.card-body -->

@@ -63,6 +63,12 @@
                   <p>Rawmaterial</p>
                 </a>
               </li>
+              <li class="nav-item">
+                <a href="{{ url('ListPayRawmaterial')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Purchase Rawmaterial</p>
+                </a>
+              </li>
             </ul>
           </li>
           <li class="nav-item">
@@ -123,7 +129,6 @@
               <i class="nav-icon fas fa-tree"></i>
               <p>
                 Product request
-                <!-- <i class="fas fa-angle-left right"></i> -->
               </p>
             </a>
           </li>
@@ -166,7 +171,6 @@
               <i class="nav-icon fas fa-tree"></i>
               <p>
                 UsedRawmaterial
-                <!-- <i class="fas fa-angle-left right"></i> -->
               </p>
             </a>
           </li>
@@ -175,25 +179,31 @@
               <i class="nav-icon fas fa-tree"></i>
               <p>
                 ManufacturedProduct
-                <!-- <i class="fas fa-angle-left right"></i> -->
               </p>
             </a>
           </li>
-            @elseif (Auth::user()->id == 3)
-            <li class="nav-item">
+          <li class="nav-item">
             <a href="{{ url('ListRequestProduct')}}" class="nav-link">
               <i class="nav-icon fas fa-tree"></i>
               <p>
                 Product request
-                <!-- <i class="fas fa-angle-left right"></i> -->
               </p>
             </a>
           </li>
+            @elseif (Auth::user()->id == 3)
           <li class="nav-item">
             <a href="{{ url('ListUserProduct')}}" class="nav-link">
               <i class="nav-icon fas fa-tree"></i>
               <p>
                  Product
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="{{ url('ListRequestProduct')}}" class="nav-link">
+              <i class="nav-icon fas fa-tree"></i>
+              <p>
+                Product request
               </p>
             </a>
           </li>

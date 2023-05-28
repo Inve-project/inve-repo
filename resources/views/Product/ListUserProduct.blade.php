@@ -42,7 +42,7 @@
                 <table id="example1" class="table table-bordered table-striped">
                   <thead>
                   <tr>
-                    <th>Id</th>
+                    <th>S/N</th>
                     <th>product</th>
                     <th>Category</th>
                     <th>Units</th>
@@ -51,10 +51,10 @@
                   </tr>
                   </thead>
                   <tbody>
-                  @foreach($data as $data)
+                  @foreach($data as $index=>$data)
                       <tr>
-                      <th>{{$data->id}}</th>
-                      <td>{{$data->product_id}}</td>
+                      <td>{{ $index +1 }}</td>
+                      <td>{{$data->name}}</td>
                       <td>{{$data->category}}</td>
                       <td>{{$data->units}}</td>
                       <td>{{$data->quantity}}</td>

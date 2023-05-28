@@ -27,7 +27,11 @@ class RequestProductController extends Controller
 
     public function RequestProduct(){
 
-        $data = Product::all();
+        $data = DB::table('request_products')
+                   ->select('products.id','products.name','products.units')
+                   ->join('products', 'request_products.product_id', '=', 'products.id')
+                   ->distinct()
+                   ->get();
         return view('Request.RequestProduct',compact('data') );
         
     }
@@ -53,8 +57,12 @@ class RequestProductController extends Controller
        
     public function ListRequestProduct(){
 
-           $data = RequestProduct::all();
-        return view('Request.ListRequestProduct',compact('data') );
+           $data = DB::table('request_products')
+                     ->select('request_products.id','products.name','request_products.quantity','request_products.date','request_products.color','request_products.status')
+                     ->join('products', 'request_products.product_id', '=', 'products.id')
+                     ->get();
+
+           return view('Request.ListRequestProduct',compact('data') );
 
            }
 

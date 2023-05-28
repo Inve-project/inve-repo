@@ -36,26 +36,22 @@
     <section class="content">
       <div class="container-fluid">
         <div class="row">
-          {{-- <div class="col-6"> --}}
             <div class="col-lg-12">
-          {{-- <a href="{{url('Vendor')}}"><button class="btn btn-success btn-sm">Add Units</button></a> --}}
-          <br>
-          <br>
             <div class="card">
               <!-- /.card-header -->
               <div class="card-body">
                 <table id="example1" class="table table-bordered table-striped">
                   <thead>
                   <tr>
-                    <th>Id</th>
+                    <th>S/N</th>
                     <th>Units name</th>
                     <th>Actions</th>
                   </tr>
                   </thead>
                   <tbody>
-                  @foreach($data as $data)
+                  @foreach($data as $index=>$data)
                       <tr>
-                      <td>{{$data->id}}</td>
+                      <td>{{ $index +1 }}</td>
                     <td>{{$data->Units_name}}</td>
 
                     <td class="text-center py-0 align-middle">

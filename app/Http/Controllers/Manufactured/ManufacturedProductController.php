@@ -62,7 +62,11 @@ class ManufacturedProductController extends Controller
        
     public function ListManufacturedProduct(){
 
-           $data = ManufacturedProduct::all();
+        $data = DB::table('manufactured_products')
+                  ->select('manufactured_products.id','products.name','manufactured_products.quantity','manufactured_products.Intake','manufactured_products.date')
+                  ->join('products', 'manufactured_products.product_id', '=', 'products.id')
+                  ->get();
+                  
            return view('Manufacture.ListManufacturedProduct',compact('data') );
 
            }

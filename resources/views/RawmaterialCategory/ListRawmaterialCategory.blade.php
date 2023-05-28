@@ -49,15 +49,15 @@
                   <thead>
                   <tr>
                   <tr>
-                    <th>Category Id</th>
+                    <th>S/N</th>
                     <th>Category name</th>
                     <th>Actions</th>
                   </tr>
                   </thead>
                   <tbody>
-                  @foreach($data as $data)
+                  @foreach($data as $index=>$data)
                       <tr>
-                    <td>{{$data->id}}</td>
+                      <td>{{ $index +1 }}</td>
                     <td>{{$data->Category_name}}</td>
                     <td class="text-center py-0 align-middle">
                         <a href="{{url('editRawmaterialCategory',$data->id)}}" class="btn btn-info"><i class="fas fa-pen"></i></a>
