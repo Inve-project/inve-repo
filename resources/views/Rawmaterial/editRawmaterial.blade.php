@@ -19,7 +19,7 @@
             </div>
             <div class="col-1">
                 <div class="btn-group btn-group-sm ">
-                     <a href="{{url('ListRawmaterial')}}" class="btn btn-success "><i class="fas fa-plus buttoncolor"></i></a>
+                     <a href="{{url('ListRawmaterial')}}" class="btn btn-success "><i class="fas fa-arrow-right buttoncolor"></i></a>
                 </div>
             </div>
           </div>

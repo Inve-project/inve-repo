@@ -9,7 +9,7 @@
   @endsection
 @section("content")
 
-<div class="content-wrapper">
+<div class="content-wrapper main">
     <!-- Content Header (Page header) -->
     <div class="card-body ">
         <div class="callout callout-success">
@@ -32,14 +32,14 @@
       <div class="container-fluid">
         <div class="row">
           <!-- left column -->
-          <div class="col-md-8">
+          <div class="col-md-12">
             <!-- jquery validation -->
             <div class="card card-primary">
               <!-- form start -->
               <form  method="POST" action="{{url('AddProductUnits')}}"class="row g-3">
                 @csrf
                 <div class="card-body">
-                  <div class="form-group">
+                  <div class="form-group col-8">
                     <label >Units Name</label>
                     <input type="text" name="name" class="form-control" id="exampleInputUnits" placeholder="Enter Units Name" required>
                   </div>

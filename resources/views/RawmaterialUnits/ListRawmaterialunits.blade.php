@@ -59,7 +59,7 @@
                         <a href="{{url('editRawmaterialUnits',$data->id)}}" class="btn btn-primary"><i class="fas fa-pen"></i></a>
                         <a
                         onclick="return confirm('Are you sure  you want to delete')"
-                         href="{{url('deleteRawmaterialUnitsy',$data->id)}}" class="btn btn-danger"><i class="fas fa-trash"></i></a>
+                         href="{{url('deleteRawmaterialUnits',$data->id)}}" class="btn btn-danger"><i class="fas fa-trash"></i></a>
                       </div>
                       </td>
                        </tr>

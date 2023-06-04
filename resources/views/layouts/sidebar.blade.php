@@ -4,10 +4,10 @@
       <img src="dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
       <span class="brand-text font-weight-light">Inventory System</span>
     </a>
-    <a href="{{ url('/dashboard')}}" class="brand-link">
+    <!-- <a href="{{ url('/dashboard')}}" class="brand-link">
       <img src="dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
       <span class="brand-text font-weight-light">{{ Auth::user()->name }}</span>
-    </a>
+    </a> -->
 
     <!-- Sidebar -->
     <div class="sidebar">
@@ -23,22 +23,20 @@
               <i class="nav-icon fas fa-chart-pie"></i>
               <p>
                 Dashbord
-                <!-- <i class="right fas fa-angle-left"></i> -->
               </p>
             </a>
           </li>
           <li class="nav-item">
             <a href="{{ url('ListVendor')}}" class="nav-link">
-              <i class="nav-icon fas fa-tree"></i>
+              <i class="nav-icon fas fa-user"></i>
               <p>
                 Vendor
-                <!-- <i class="fas fa-angle-left right"></i> -->
               </p>
             </a>
           </li>
           <li class="nav-item">
             <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-tree"></i>
+              <i class="nav-icon fas fa-qrcode"></i>
               <p>
                 Manage Raw Material
                 <i class="fas fa-angle-left right"></i>
@@ -73,7 +71,7 @@
           </li>
           <li class="nav-item">
             <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-tree"></i>
+              <i class="nav-icon fas fa-trophy"></i>
               <p>
                 Manage Product
                 <i class="fas fa-angle-left right"></i>
@@ -102,7 +100,7 @@
           </li>
           <li class="nav-item">
             <a href="{{ url('ListPayment')}}" class="nav-link">
-              <i class="nav-icon fas fa-tree"></i>
+              <i class="nav-icon fas fa-dollar-sign"></i>
               <p>
                 Payment
               </p>
@@ -110,7 +108,7 @@
           </li>
           <li class="nav-item">
             <a href="{{ url('ListUsedRawmaterial')}}" class="nav-link">
-              <i class="nav-icon fas fa-tree"></i>
+              <i class="nav-icon fas fa-qrcode"></i>
               <p>
                 UsedRawmaterial
               </p>
@@ -118,7 +116,7 @@
           </li>
           <li class="nav-item">
             <a href="{{ url('ListManufacturedProduct')}}" class="nav-link">
-              <i class="nav-icon fas fa-tree"></i>
+              <i class="nav-icon fas fa-industry"></i>
               <p>
                 ManufacturedProduct
               </p>
@@ -126,7 +124,7 @@
           </li>
           <li class="nav-item">
             <a href="{{ url('ListRequestProduct')}}" class="nav-link">
-              <i class="nav-icon fas fa-tree"></i>
+              <i class="nav-icon fas fa-paper-plane"></i>
               <p>
                 Product request
               </p>
@@ -134,7 +132,7 @@
           </li>
           <li class="nav-item">
             <a href="{{ url('ListUserProduct')}}" class="nav-link">
-              <i class="nav-icon fas fa-tree"></i>
+              <i class="nav-icon fas fa-trophy"></i>
               <p>
                  Product
               </p>
@@ -142,7 +140,7 @@
           </li>
           <li class="nav-item">
             <a href="{{ url('ListSellProduct')}}" class="nav-link">
-              <i class="nav-icon fas fa-tree"></i>
+              <i class="nav-icon fas fa-dollar-sign"></i>
               <p>
                  Sell Product
               </p>
@@ -151,8 +149,16 @@
           <li>
           @elseif (Auth::user()->id == 2)
           <li class="nav-item">
+            <a href="{{ url('dashboard')}}" class="nav-link">
+              <i class="nav-icon fas fa-chart-pie"></i>
+              <p>
+                Dashbord
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
             <a href="{{ url('ListRawmaterial')}}" class="nav-link">
-              <i class="nav-icon fas fa-tree"></i>
+              <i class="nav-icon fas fa-qrcode"></i>
               <p>
               Raw material
               </p>
@@ -160,7 +166,7 @@
           </li>
           <li class="nav-item">
             <a href="{{ url('ListProduct')}}" class="nav-link">
-              <i class="nav-icon fas fa-tree"></i>
+              <i class="nav-icon fas fa-trophy"></i>
               <p>
                 Product
               </p>
@@ -168,7 +174,7 @@
           </li>
           <li class="nav-item">
             <a href="{{ url('ListUsedRawmaterial')}}" class="nav-link">
-              <i class="nav-icon fas fa-tree"></i>
+              <i class="nav-icon fas fa-qrcode"></i>
               <p>
                 UsedRawmaterial
               </p>
@@ -176,7 +182,7 @@
           </li>
           <li class="nav-item">
             <a href="{{ url('ListManufacturedProduct')}}" class="nav-link">
-              <i class="nav-icon fas fa-tree"></i>
+              <i class="nav-icon fas fa-industry"></i>
               <p>
                 ManufacturedProduct
               </p>
@@ -184,16 +190,24 @@
           </li>
           <li class="nav-item">
             <a href="{{ url('ListRequestProduct')}}" class="nav-link">
-              <i class="nav-icon fas fa-tree"></i>
+              <i class="nav-icon fas fa-paper-plane"></i>
               <p>
                 Product request
               </p>
             </a>
           </li>
             @elseif (Auth::user()->id == 3)
+            <li class="nav-item">
+            <a href="{{ url('dashboard')}}" class="nav-link">
+              <i class="nav-icon fas fa-chart-pie"></i>
+              <p>
+                Dashbord
+              </p>
+            </a>
+          </li>
           <li class="nav-item">
             <a href="{{ url('ListUserProduct')}}" class="nav-link">
-              <i class="nav-icon fas fa-tree"></i>
+              <i class="nav-icon fas fa-trophy"></i>
               <p>
                  Product
               </p>
@@ -201,7 +215,7 @@
           </li>
           <li class="nav-item">
             <a href="{{ url('ListRequestProduct')}}" class="nav-link">
-              <i class="nav-icon fas fa-tree"></i>
+              <i class="nav-icon fas fa-paper-plane"></i>
               <p>
                 Product request
               </p>
@@ -209,7 +223,7 @@
           </li>
           <li class="nav-item">
             <a href="{{ url('ListSellProduct')}}" class="nav-link">
-              <i class="nav-icon fas fa-tree"></i>
+              <i class="nav-icon fas fa-dollar-sign"></i>
               <p>
                  Sell Product
               </p>
@@ -219,7 +233,7 @@
             @endif
           <li class="nav-item">
             <a href="{{ route('logout') }}" class="nav-link"  onclick="event.preventDefault();document.getElementById('logout-form').submit();">
-              <i class="nav-icon fas fa-tree"></i>
+              <i class="nav-icon fas fa-power-off"></i>
               <p>
               Logout
               </p>

@@ -40,7 +40,7 @@ class UsedRawmaterialController extends Controller
         $data->raw_material_id=$id;
         $data->quantity= $quantity;
         $data->date=$request->date;
-        $data->name=$request->name;
+        $data->intake=$request->intake;
         $data->save();
 
         $db = DB::table('rawmaterials')

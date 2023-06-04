@@ -59,7 +59,7 @@
                   </div>
                   <div class="form-group col-md-12"">
                      <label >Name of the intake</label>
-                     <input type="text" name="name" class="form-control" id="exampleInputCategory" required>
+                     <input type="text" name="intake" class="form-control" id="exampleInputCategory" required>
                   </div>
                   <div class="form-group col-md-12"">
                      <button type="submit" class="btn btn-success">Submit</button>

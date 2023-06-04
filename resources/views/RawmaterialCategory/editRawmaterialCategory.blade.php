@@ -1,45 +1,49 @@
 @extends("master")
 @section("css")
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" integrity="sha512-3pIirOrwegjM6erE5gPSwkUzO+3cTjpnV9lexlNZqvupR64iZBnOOTiiLPb9M36zpMScbmUNIcHUqKD47M719g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-@endsection
+<style type="text/css">
+    .buttoncolor{
+      color: #ffff;
+    }
+  </style>
+  @endsection
 @section("content")
-
-<div class="content-wrapper">
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper main">
     <!-- Content Header (Page header) -->
-    <div class="content-header">
-      <div class="container-fluid">
-        <div class="row mb-2">
-          <div class="col-sm-6">
-            <h1 class="m-0">Update Raw Material Category</h1>
-          </div>
-          <div class="col-sm-6">
-            <ol class="breadcrumb float-sm-right">
-              <li><a href="{{url('ListRawmaterialCategory')}}"><button class="btn btn-secondary btn-sm">Go Back</button></a></li>
-            </ol>
+    <div class="card-body ">
+        <div class="callout callout-success">
+          <div class="row">
+            <div class="col-11">
+                <h3>Update Raw Material Category</h3>
+            </div>
+            <div class="col-1">
+                <div class="btn-group btn-group-sm ">
+                     <a href="{{url('ListRawmaterialCategory')}}" class="btn btn-success "><i class="fas fa-arrow-right buttoncolor"></i></a>
+                </div>
+            </div>
           </div>
         </div>
-      </div>
     </div>
-    <!-- /.content-header -->
 
     <!-- Main content -->
     <section class="content">
       <div class="container-fluid">
         <div class="row">
           <!-- left column -->
-          <div class="col-md-8">
+          <div class="col-md-12">
             <!-- jquery validation -->
             <div class="card card-primary">
               <!-- form start -->
             <form  method="POST" action="{{url('updateRawmaterialCategory',$data->id)}}" class="row g-3">
                 @csrf
                 <div class="card-body">
-                  <div class="form-group">
+                  <div class="form-group col-8">
                     <label >Category Name</label>
                     <input type="text" name="name" class="form-control" id="exampleInputCategory" placeholder="{{$data->Category_name}}" required>
                   </div>
                 <!-- /.card-body -->
-                  <button type="submit" class="btn btn-primary">Update</button>
+                  <button type="submit" class="btn btn-success">Update</button>
               </form>
             </div>
             <!-- /.card -->

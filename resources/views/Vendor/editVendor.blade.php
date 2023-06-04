@@ -18,7 +18,7 @@
             </div>
             <div class="col-1">
                 <div class="btn-group btn-group-sm ">
-                     <a href="{{url('ListVendor')}}" class="btn btn-success "><i class="fas fa-plus buttoncolor"></i></a>
+                     <a href="{{url('ListVendor')}}" class="btn btn-success "><i class="fas fa-arrow-right buttoncolor"></i></a>
                 </div>
             </div>
           </div>
@@ -31,14 +31,14 @@
       <div class="container-fluid">
         <div class="row">
           <!-- left column -->
-          <div class="col-md-8">
+          <div class="col-md-12">
             <!-- jquery validation -->
             <div class="card card-primary">
               <!-- form start -->
             <form  method="POST" action="{{url('updateVendor',$data->id)}}" class="row g-3">
                 @csrf
                 <div class="card-body">
-                  <div class="form-group">
+                  <div class="form-group col-8">
                     <label >Units Name</label>
                     <input type="text" name="name" class="form-control" id="exampleInputUnits" value="{{$data->name}}" required>
                   </div>

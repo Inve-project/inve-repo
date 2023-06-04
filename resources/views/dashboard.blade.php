@@ -1,20 +1,14 @@
 @extends("master")
 @section("content")
 
-<div class="content-wrapper">
+<div class="content-wrapper main">
     <!-- Content Header (Page header) -->
     <div class="content-header">
       <div class="container-fluid">
         <div class="row mb-2">
-          <div class="col-sm-6">
+          <!-- <div class="col-sm-6">
             <h1 class="m-0">Dashboard</h1>
-          </div>
-          <div class="col-sm-6">
-            <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Dashboard v1</li>
-            </ol>
-          </div>
+          </div> -->
         </div>
       </div>
     </div>
@@ -23,68 +17,83 @@
     <!-- Main content -->
     <section class="content">
       <div class="container-fluid">
+      <h5 class="mb-2">Product</h5>
         <!-- Small boxes (Stat box) -->
         <div class="row">
-          <div class="col-lg-3 col-6">
-            <!-- small box -->
-            <div class="small-box bg-info">
-              <div class="inner">
-                <h3>150</h3>
+        @foreach($data as $data)
+        <div class="col-md-3 col-sm-6 col-12">
+            <div class="info-box">
+              <span class="info-box-icon bg-primary"><i class="fas fa-trophy"></i></span>
 
-                <p>New Orders</p>
+              <div class="info-box-content">
+                <span class="info-box-text">{{$data->name}}</span>
+                <span class="info-box-number">{{$data->quantity}} {{$data->units}}</span>
               </div>
-              <div class="icon">
-                <i class="ion ion-bag"></i>
-              </div>
-              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              <!-- /.info-box-content -->
             </div>
+            <!-- /.info-box -->
           </div>
-          <!-- ./col -->
-          <div class="col-lg-3 col-6">
-            <!-- small box -->
-            <div class="small-box bg-success">
-              <div class="inner">
-                <h3>53<sup style="font-size: 20px">%</sup></h3>
+           @endforeach
+        </div>
+        <!-- /.row -->
+        @if (Auth::user()->id != 2)
+        <h5 class="mb-2">User Product</h5>
+        <!-- Small boxes (Stat box) -->
+        <div class="row">
+        @foreach($user as $data)
+        <div class="col-md-3 col-sm-6 col-12">
+            <div class="info-box">
+              <span class="info-box-icon bg-info"><i class="fas fa-trophy"></i></span>
 
-                <p>Bounce Rate</p>
+              <div class="info-box-content">
+                <span class="info-box-text">{{$data->name}}</span>
+                <span class="info-box-number">{{$data->quantity}} {{$data->units}}</span>
               </div>
-              <div class="icon">
-                <i class="ion ion-stats-bars"></i>
-              </div>
-              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              <!-- /.info-box-content -->
             </div>
+            <!-- /.info-box -->
           </div>
-          <!-- ./col -->
-          <div class="col-lg-3 col-6">
-            <!-- small box -->
-            <div class="small-box bg-warning">
-              <div class="inner">
-                <h3>44</h3>
+           @endforeach
+        </div>
+        <!-- /.row -->
+         @endif
+         <!-- Small boxes (Stat box) -->
+         <h5 class="mb-2">Raw material</h5>
+         <div class="row">
+        @foreach($rawmaterial as $data)
+        <div class="col-md-3 col-sm-6 col-12">
+            <div class="info-box">
+              <span class="info-box-icon bg-success"><i class="fas fa-qrcode"></i></span>
 
-                <p>User Registrations</p>
+              <div class="info-box-content">
+                <span class="info-box-text">{{$data->name}}</span>
+                <span class="info-box-number">{{$data->quantity}} {{$data->units}}</span>
               </div>
-              <div class="icon">
-                <i class="ion ion-person-add"></i>
-              </div>
-              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              <!-- /.info-box-content -->
             </div>
+            <!-- /.info-box -->
           </div>
-          <!-- ./col -->
-          <div class="col-lg-3 col-6">
-            <!-- small box -->
-            <div class="small-box bg-danger">
-              <div class="inner">
-                <h3>65</h3>
+           @endforeach
+        </div>
+        <!-- /.row -->
 
-                <p>Unique Visitors</p>
+          <!-- Small boxes (Stat box) -->
+          <h5 class="mb-2">Income</h5>
+         <div class="row">
+        @foreach($amount as $data)
+        <div class="col-md-3 col-sm-6 col-12">
+            <div class="info-box">
+              <span class="info-box-icon bg-warning"><i class="fas fa-dollar-sign"></i></span>
+
+              <div class="info-box-content">
+                <span class="info-box-text">Amount</span>
+                <span class="info-box-number">{{$data->amount}} Tzsh</span>
               </div>
-              <div class="icon">
-                <i class="ion ion-pie-graph"></i>
-              </div>
-              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              <!-- /.info-box-content -->
             </div>
+            <!-- /.info-box -->
           </div>
-          <!-- ./col -->
+           @endforeach
         </div>
         <!-- /.row -->
 
