@@ -131,13 +131,21 @@
             </a>
           </li>
           <li class="nav-item">
+            <a href="{{ url('ListReorder')}}" class="nav-link">
+              <i class="nav-icon fas fa-paper-plane"></i>
+              <p>
+                Re Order point
+              </p>
+            </a>
+          </li>
+          <!-- <li class="nav-item">
             <a href="{{ url('ListUserProduct')}}" class="nav-link">
               <i class="nav-icon fas fa-trophy"></i>
               <p>
                  Product
               </p>
             </a>
-          </li>
+          </li> -->
           <li class="nav-item">
             <a href="{{ url('ListSellProduct')}}" class="nav-link">
               <i class="nav-icon fas fa-dollar-sign"></i>

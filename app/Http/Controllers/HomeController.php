@@ -8,6 +8,7 @@ use App\Models\Product;
 use App\Models\UserProduct;
 use App\Models\SellProduct;
 use App\Models\Rawmaterial;
+use App\Models\Reorder;
 
 class HomeController extends Controller
 {
@@ -38,6 +39,16 @@ class HomeController extends Controller
         $amount = DB::table('sell_products')
                       ->select(DB::raw('SUM(amount) AS amount'))
                       ->get();
+
+        //  $reorder = DB::table('products','reorders')
+        //              ->select('status')
+        //              ->where('products.id', '=', 'reorders.item_id')
+        //              ->and('products.name', '=', 'reorders.item_name')
+        //              ->and('products.quantity', '<', 'reorders.item_quantity')
+        //              ->get();
+
+
+
         return view('dashboard',compact('data','rawmaterial','amount','user') );
     }
  

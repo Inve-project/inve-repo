@@ -1,5 +1,20 @@
 @extends("master")
+@section("css")
+<style>
+        .blink {
+            animation: blinker 0.5s linear infinite;
+            color: red;
+            font-family: sans-serif;
+        }
+        @keyframes blinker {
+            50% {
+                opacity: 0;
+            }
+        }
+    </style>
+@endsection
 @section("content")
+
 
 <div class="content-wrapper main">
     <!-- Content Header (Page header) -->
@@ -17,13 +32,13 @@
     <!-- Main content -->
     <section class="content">
       <div class="container-fluid">
-      <h5 class="mb-2">Product</h5>
+      <h5 class="mb-2">Products</h5>
         <!-- Small boxes (Stat box) -->
         <div class="row">
         @foreach($data as $data)
         <div class="col-md-3 col-sm-6 col-12">
             <div class="info-box">
-              <span class="info-box-icon bg-primary"><i class="fas fa-trophy"></i></span>
+              <span class="info-box-icon bg-primary blin"><i class="fas fa-trophy" ></i></span>
 
               <div class="info-box-content">
                 <span class="info-box-text">{{$data->name}}</span>
@@ -37,7 +52,7 @@
         </div>
         <!-- /.row -->
         @if (Auth::user()->id != 2)
-        <h5 class="mb-2">User Product</h5>
+        <h5 class="mb-2">User Products</h5>
         <!-- Small boxes (Stat box) -->
         <div class="row">
         @foreach($user as $data)
@@ -58,7 +73,7 @@
         <!-- /.row -->
          @endif
          <!-- Small boxes (Stat box) -->
-         <h5 class="mb-2">Raw material</h5>
+         <h5 class="mb-2">Raw materials</h5>
          <div class="row">
         @foreach($rawmaterial as $data)
         <div class="col-md-3 col-sm-6 col-12">

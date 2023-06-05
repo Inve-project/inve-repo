@@ -26,7 +26,7 @@ Route::get('/demo', function () {
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'dashboard'])->name('dashboard');
 Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'dashboard'])->name('dashboard');
 
-  /*                              Rawmaterial Route
+  /*                           Rawmaterial Route
                      ##########################################*/
 Route::get('/RawmaterialCategory', [App\Http\Controllers\Rawmaterial\RawmaterialCategoryController::class, 'RawmaterialCategory']);
 Route::post('/AddRawmaterialCategory', [App\Http\Controllers\Rawmaterial\RawmaterialCategoryController::class, 'AddRawmaterialCategory']);
@@ -139,5 +139,16 @@ Route::get('/editVendor/{id}', [App\Http\Controllers\Vendor\VendorController::cl
 Route::get('/deleteVendor/{id}', [App\Http\Controllers\Vendor\VendorController::class, 'deleteVendor']);
 Route::post('/updateVendor/{id}', [App\Http\Controllers\Vendor\VendorController::class, 'updateVendor']);
 
+ /*                             Reorder
+                   ##########################################*/
+Route::get('/Reorder', [App\Http\Controllers\Reorder\ReorderController::class, 'Reorder']);
+Route::get('/Reordermaterial', [App\Http\Controllers\Reorder\ReorderController::class, 'Reordermaterial']);
+Route::post('/AddReorder', [App\Http\Controllers\Reorder\ReorderController::class, 'AddReorder']);
+Route::post('/AddReordermaterial', [App\Http\Controllers\Reorder\ReorderController::class, 'AddReordermaterial']);
+Route::get('/ListReorder', [App\Http\Controllers\Reorder\ReorderController::class, 'ListReorder'])->name('ListReorder');
+Route::get('/editReorder/{id}', [App\Http\Controllers\Reorder\ReorderController::class, 'editReorder']);
+Route::get('/editReordermaterial/{id}', [App\Http\Controllers\Reorder\ReorderController::class, 'editReordermaterial']);
+Route::get('/deleteReorder/{id}', [App\Http\Controllers\Reorder\ReorderController::class, 'deleteReorder']);
+Route::post('/updateReorder/{id}', [App\Http\Controllers\Reorder\ReorderController::class, 'updateReorder']);                 
 
 Route::get('logs', [\Rap2hpoutre\LaravelLogViewer\LogViewerController::class, 'index']);
