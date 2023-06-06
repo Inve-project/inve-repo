@@ -143,12 +143,16 @@ Route::post('/updateVendor/{id}', [App\Http\Controllers\Vendor\VendorController:
                    ##########################################*/
 Route::get('/Reorder', [App\Http\Controllers\Reorder\ReorderController::class, 'Reorder']);
 Route::get('/Reordermaterial', [App\Http\Controllers\Reorder\ReorderController::class, 'Reordermaterial']);
+Route::get('/Reorderuserproduct', [App\Http\Controllers\Reorder\ReorderController::class, 'Reorderuserproduct']);
 Route::post('/AddReorder', [App\Http\Controllers\Reorder\ReorderController::class, 'AddReorder']);
+Route::post('/AddReorderuserproduct', [App\Http\Controllers\Reorder\ReorderController::class, 'AddReorderuserproduct']);
 Route::post('/AddReordermaterial', [App\Http\Controllers\Reorder\ReorderController::class, 'AddReordermaterial']);
 Route::get('/ListReorder', [App\Http\Controllers\Reorder\ReorderController::class, 'ListReorder'])->name('ListReorder');
 Route::get('/editReorder/{id}', [App\Http\Controllers\Reorder\ReorderController::class, 'editReorder']);
+Route::get('/editReorderuserproduct/{id}', [App\Http\Controllers\Reorder\ReorderController::class, 'editReorderuserproduct']);
 Route::get('/editReordermaterial/{id}', [App\Http\Controllers\Reorder\ReorderController::class, 'editReordermaterial']);
 Route::get('/deleteReorder/{id}', [App\Http\Controllers\Reorder\ReorderController::class, 'deleteReorder']);
 Route::post('/updateReorder/{id}', [App\Http\Controllers\Reorder\ReorderController::class, 'updateReorder']);                 
+Route::post('/updateReorderuserproduct/{id}', [App\Http\Controllers\Reorder\ReorderController::class, 'updateReorderuserproduct']);                 
 
 Route::get('logs', [\Rap2hpoutre\LaravelLogViewer\LogViewerController::class, 'index']);

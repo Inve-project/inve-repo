@@ -52,7 +52,7 @@
                      </select>
                   </div>
                   <div class="form-group col-md-12"">
-                     <button type="submit" class="btn btn-success">Submit</button>
+                     <button type="submit" class="btn btn-success">Add</button>
                   </div>
          </form>
          </div>

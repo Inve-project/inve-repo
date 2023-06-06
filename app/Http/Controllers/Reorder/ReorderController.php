@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Reorder;
 use App\Models\Product;
+use App\Models\UserProduct;
 use App\Models\Rawmaterial;
 
 class ReorderController extends Controller
@@ -33,6 +34,16 @@ class ReorderController extends Controller
         return view('Reorder.Reordermaterial',compact('data') );
     }
 
+    public function Reorderuserproduct(){
+
+         $data = DB::table('user_products')
+                    ->select('user_products.product_id','products.name','user_products.units')
+                    ->join('products', 'user_products.product_id', '=', 'products.id')
+                    ->get();
+   
+        return view('Reorder.Reorderuserproduct',compact('data') );
+    }
+
     public function AddReorder(Request $request){
 
         $id = $request->id;
@@ -56,6 +67,30 @@ class ReorderController extends Controller
              return redirect()->back()->with('message','Reorder Added Successfuly');
         }
         }
+
+        public function AddReorderuserproduct(Request $request){
+
+            $id = $request->id;
+            $exists = Reorder::where('item_id', $id)->where('item_category','User')->exists();
+            if ($exists) {
+                return redirect()->back()->with('message','Sorry The Item is Exist');
+            } else {
+                $product = product::find($id);
+    
+                $category = "User";
+                $status = "blank";
+        
+                 $data=new Reorder;
+                 $data->User_id=Auth::id();
+                 $data->item_id=$id;
+                 $data->item_name=$product->name;
+                 $data->item_quantity=$request->quantity;
+                 $data->item_category=$category;
+                 $data->status=$status;
+                 $data->save();
+                 return redirect()->back()->with('message','Reorder Added Successfuly');
+            }
+            }
 
         public function AddReordermaterial(Request $request){
            
@@ -91,9 +126,19 @@ class ReorderController extends Controller
         public function editReorder($id){
 
                     $Reorder = Reorder::find($id);
-                    $data = Product::all();
+                    $data = DB::table('user_products')
+                                ->select('user_products.product_id','products.name','user_products.units')
+                                ->join('products', 'user_products.product_id', '=', 'products.id')
+                                ->get();
                     return view('Reorder.editReorder',compact('Reorder','data') );
                     }
+
+        public function editReorderuserproduct($id){
+
+                        $Reorder = Reorder::find($id);
+                        $data = Product::all();
+                        return view('Reorder.editReorderuserproduct',compact('Reorder','data') );
+                        }
 
         public function editReordermaterial($id){
 
@@ -111,6 +156,14 @@ class ReorderController extends Controller
                          $data->save();
                          return redirect()->back()->with('message','Reorder Updated Successfuly');
                         }
+        public function updateReorderuserproduct(Request $request, $id){
+
+                      $data = Reorder::find($id);
+                        $data->User_id=Auth::id();
+                        $data->item_quantity=$request->quantity;
+                        $data->save();
+                        return redirect()->back()->with('message','Reorder Updated Successfuly');
+                    }
 
         public function updateReordermaterial(Request $request, $id){
                                 $data = Reorder::find($id);

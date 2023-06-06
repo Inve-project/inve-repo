@@ -150,7 +150,7 @@
             <a href="{{ url('ListSellProduct')}}" class="nav-link">
               <i class="nav-icon fas fa-dollar-sign"></i>
               <p>
-                 Sell Product
+                 Sales
               </p>
             </a>
           </li>
@@ -233,7 +233,7 @@
             <a href="{{ url('ListSellProduct')}}" class="nav-link">
               <i class="nav-icon fas fa-dollar-sign"></i>
               <p>
-                 Sell Product
+                 Sales
               </p>
             </a>
           </li>

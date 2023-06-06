@@ -36,16 +36,16 @@
       <!-- jquery validation -->
       <div class="card card-primary">
          <!-- form start -->
-         <form  method="POST" action="{{url('AddReordermaterial')}}"class="row g-3">
+         <form  method="POST" action="{{url('AddReorderuserproduct')}}"class="row g-3">
             @csrf
             <div class="card-body">
                <div class="row  col-md-12">
                   <div class="form-group col-md-8">
-                     <label>Raw material name</label>
+                     <label>User Product name</label>
                      <select class="form-control select2" style="width: 100%;" name="id" required>
                         <option></option>
                         @foreach($data as $data)
-                        <option value="{{$data->id}}">{{$data->name}} in {{$data->units}}</option>
+                        <option value="{{$data->product_id}}">{{$data->name}} in {{$data->units}}</option>
                         @endforeach
                      </select>
                   </div>

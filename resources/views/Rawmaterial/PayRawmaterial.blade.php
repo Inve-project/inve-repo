@@ -73,7 +73,7 @@
                      <input type="date" name="date" class="form-control" id="exampleInputCategory" required>
                   </div>
                   <div class="form-group col-md-12"">
-                     <button  onclick="return confirm('Check your data before submit')" type="submit" class="btn btn-success">Submit</button>
+                     <button  onclick="return confirm('Check your data before submit')" type="submit" class="btn btn-success">Purchase</button>
                   </div>
          </form>
          </div>

@@ -36,26 +36,21 @@
       <!-- jquery validation -->
       <div class="card card-primary">
          <!-- form start -->
-         <form  method="POST" action="{{url('AddReordermaterial')}}"class="row g-3">
+         <form  method="POST" action="{{url('updateReorderuserproduct',$Reorder->id)}}"class="row g-3">
             @csrf
             <div class="card-body">
                <div class="row  col-md-12">
                   <div class="form-group col-md-8">
-                     <label>Raw material name</label>
-                     <select class="form-control select2" style="width: 100%;" name="id" required>
-                        <option></option>
-                        @foreach($data as $data)
-                        <option value="{{$data->id}}">{{$data->name}} in {{$data->units}}</option>
-                        @endforeach
-                     </select>
+                     <label>User product name : {{$Reorder->item_name}}</label>
+                   
                   </div>
                     <div class="form-group col-md-8"">
                      <label >Product quantity</label>
-                     <input type="text" name="quantity" class="form-control" id="exampleInputCategory" required>
+                     <input type="text" name="quantity" class="form-control" value="{{$Reorder->item_quantity}}" required>
                   </div>
                
                   <div class="form-group col-md-12"">
-                     <button type="submit" class="btn btn-success">Order</button>
+                     <button type="submit" class="btn btn-success">Update</button>
                   </div>
          </form>
          </div>

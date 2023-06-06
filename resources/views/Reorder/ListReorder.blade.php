@@ -24,7 +24,8 @@
             @if (Auth::user()->id == 1)
                 <div class="btn-group btn-group-sm ">
                      <a href="{{url('Reorder')}}" class="btn btn-info "><i class="fas fa-plus buttoncolor"> Products</i><br></a>.
-                     <a href="{{url('Reordermaterial')}}" class="btn btn-success "><i class="fas fa-plus buttoncolor"> Raw materials</i><br></a>
+                     <a href="{{url('Reorderuserproduct')}}" class="btn btn-success "><i class="fas fa-plus buttoncolor"> User Products</i><br></a>.
+                     <a href="{{url('Reordermaterial')}}" class="btn btn-primary "><i class="fas fa-plus buttoncolor"> Raw materials</i><br></a>
                 </div>
              @endif
             </div>
@@ -62,6 +63,9 @@
                         <a
                     @elseif ($data->item_category == "material")
                     <a href="{{url('editReordermaterial',$data->id)}}" class="btn btn-primary"><i class="fas fa-pen"></i></a>
+                        <a
+                        @elseif ($data->item_category == "User")
+                    <a href="{{url('editReorderuserproduct',$data->id)}}" class="btn btn-primary"><i class="fas fa-pen"></i></a>
                         <a
                     @endif
                         onclick="return confirm('Are you sure  you want to delete')"

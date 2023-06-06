@@ -73,34 +73,34 @@ class HomeController extends Controller
     }
 
         //         User product
-//             $reorders2 = DB::table('user_products')
-//             ->join('reorders', 'user_products.product_id', '=', 'reorders.item_id')
-//             ->where('reorders.item_category', '=', 'Products')
-//             ->get();
+            $reorders2 = DB::table('user_products')
+            ->join('reorders', 'user_products.product_id', '=', 'reorders.item_id')
+            ->where('reorders.item_category', '=', 'User')
+            ->get();
 
-//         foreach ($reorders2 as $reorder) {
-//         $quantity1 = $reorder->quantity; 
-//         $quantity2 = $reorder->item_quantity; 
+        foreach ($reorders2 as $reorder) {
+        $quantity1 = $reorder->quantity; 
+        $quantity2 = $reorder->item_quantity; 
 
-//         if ($quantity1 <= $quantity2) {
-//         Reorder::where('id', $reorder->id)           
-//                 ->where('status', 'blank')
-//                 ->update(['status' => 'blink']);
-//         }else{
-//         Reorder::where('id', $reorder->id)           
-//         ->where('status', 'blink')
-//         ->update(['status' => 'blank']);
-//         }
-// }
+        if ($quantity1 <= $quantity2) {
+        Reorder::where('id', $reorder->id)           
+                ->where('status', 'blank')
+                ->update(['status' => 'blink']);
+        }else{
+        Reorder::where('id', $reorder->id)           
+        ->where('status', 'blink')
+        ->update(['status' => 'blank']);
+        }
+}
 
         $data = DB::table('products')
                       ->join('reorders', 'products.id', '=', 'reorders.item_id')
                       ->where('reorders.item_category', '=', 'Products')
                       ->get();
-        // $user = DB::table('user_products')
-        //              ->join('reorders', 'user_products.product_id', '=', 'reorders.item_id')
-        //              ->where('reorders.item_category', '=', 'Products')
-        //              ->get();
+        $user = DB::table('user_products')
+                     ->join('reorders', 'user_products.product_id', '=', 'reorders.item_id')
+                     ->where('reorders.item_category', '=', 'User')
+                     ->get();
         $rawmaterial = DB::table('rawmaterials')
                        ->join('reorders', 'rawmaterials.id', '=', 'reorders.item_id')
                        ->where('reorders.item_category', '=', 'material')
@@ -130,7 +130,7 @@ class HomeController extends Controller
                         ->get();
                         
 
-        return view('dashboard',compact('data','rawmaterial','todayData','thisWeekData','thisMonthData') );
+        return view('dashboard',compact('data','user','rawmaterial','todayData','thisWeekData','thisMonthData') );
     }
  
 
