@@ -57,10 +57,10 @@
                     <td>{{$data->item_quantity}}</td>
                     <td class="text-center py-0 align-middle">
                     <div class="btn-group btn-group-sm">
-                    @if ($data->category == "Products")
+                    @if ($data->item_category == "Products")
                         <a href="{{url('editReorder',$data->id)}}" class="btn btn-primary"><i class="fas fa-pen"></i></a>
                         <a
-                    @elseif ($data->category == "material")
+                    @elseif ($data->item_category == "material")
                     <a href="{{url('editReordermaterial',$data->id)}}" class="btn btn-primary"><i class="fas fa-pen"></i></a>
                         <a
                     @endif

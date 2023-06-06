@@ -9,6 +9,8 @@ use Illuminate\Http\Request;
 use App\Models\RequestProduct;
 use App\Models\Product;
 use App\Models\UserProduct;
+use Carbon\Carbon;
+
 
 
 
@@ -58,7 +60,7 @@ class RequestProductController extends Controller
     public function ListRequestProduct(){
 
            $data = DB::table('request_products')
-                     ->select('request_products.id','products.name','request_products.quantity','request_products.date','request_products.color','request_products.status')
+                     ->select('request_products.id','products.name','request_products.quantity','request_products.created_at','request_products.date','request_products.color','request_products.status')
                      ->join('products', 'request_products.product_id', '=', 'products.id')
                      ->get();
 
@@ -86,7 +88,10 @@ class RequestProductController extends Controller
            }
 
            public function approved($id)
-           {
+           {    
+               $currentDate = Carbon::now();
+               $formattedDateTime = $currentDate->format('Y-m-d');
+
                $data = RequestProduct::find($id);
                $ProductId = $data->product_id;
                $status = $data->status;
@@ -119,6 +124,7 @@ class RequestProductController extends Controller
                    DB::table('request_products')
                        ->where('id', $id)
                        ->update([
+                           'date' => $formattedDateTime,
                            'status' => 'Approved',
                            'color' => 'success'
                        ]);

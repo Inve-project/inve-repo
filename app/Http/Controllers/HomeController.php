@@ -9,6 +9,7 @@ use App\Models\UserProduct;
 use App\Models\SellProduct;
 use App\Models\Rawmaterial;
 use App\Models\Reorder;
+use Carbon\Carbon;
 
 class HomeController extends Controller
 {
@@ -30,26 +31,106 @@ class HomeController extends Controller
 
     public function dashboard()
     {
-        $data = product::all();
-        $user = DB::table('user_products')
-                        ->select('products.name','user_products.quantity','user_products.units')
-                       ->join('products', 'user_products.product_id', '=', 'products.id')
-                       ->get();
-        $rawmaterial = Rawmaterial::all();
-        $amount = DB::table('sell_products')
-                      ->select(DB::raw('SUM(amount) AS amount'))
+        //         product
+        $reorders = DB::table('products')
+                  ->join('reorders', 'products.id', '=', 'reorders.item_id')
+                  ->where('reorders.item_category', '=', 'Products')
+                  ->get();
+    
+       foreach ($reorders as $reorder) {
+          $quantity1 = $reorder->quantity; 
+          $quantity2 = $reorder->item_quantity; 
+        
+         if ($quantity1 <= $quantity2) {
+            Reorder::where('id', $reorder->id)           
+                    ->where('status', 'blank')
+                    ->update(['status' => 'blink']);
+        }else{
+            Reorder::where('id', $reorder->id)           
+            ->where('status', 'blink')
+            ->update(['status' => 'blank']);
+        }
+    }
+        //         Raw materials
+    $reorders1 = DB::table('rawmaterials')
+                  ->join('reorders', 'rawmaterials.id', '=', 'reorders.item_id')
+                  ->where('reorders.item_category', '=', 'material')
+                  ->get();
+    
+       foreach ($reorders1 as $reorder) {
+          $quantity1 = $reorder->quantity; 
+          $quantity2 = $reorder->item_quantity; 
+        
+         if ($quantity1 <= $quantity2) {
+            Reorder::where('id', $reorder->id)           
+                    ->where('status', 'blank')
+                    ->update(['status' => 'blink']);
+        }else{
+            Reorder::where('id', $reorder->id)           
+            ->where('status', 'blink')
+            ->update(['status' => 'blank']);
+        }
+    }
+
+        //         User product
+//             $reorders2 = DB::table('user_products')
+//             ->join('reorders', 'user_products.product_id', '=', 'reorders.item_id')
+//             ->where('reorders.item_category', '=', 'Products')
+//             ->get();
+
+//         foreach ($reorders2 as $reorder) {
+//         $quantity1 = $reorder->quantity; 
+//         $quantity2 = $reorder->item_quantity; 
+
+//         if ($quantity1 <= $quantity2) {
+//         Reorder::where('id', $reorder->id)           
+//                 ->where('status', 'blank')
+//                 ->update(['status' => 'blink']);
+//         }else{
+//         Reorder::where('id', $reorder->id)           
+//         ->where('status', 'blink')
+//         ->update(['status' => 'blank']);
+//         }
+// }
+
+        $data = DB::table('products')
+                      ->join('reorders', 'products.id', '=', 'reorders.item_id')
+                      ->where('reorders.item_category', '=', 'Products')
                       ->get();
-
-        //  $reorder = DB::table('products','reorders')
-        //              ->select('status')
-        //              ->where('products.id', '=', 'reorders.item_id')
-        //              ->and('products.name', '=', 'reorders.item_name')
-        //              ->and('products.quantity', '<', 'reorders.item_quantity')
+        // $user = DB::table('user_products')
+        //              ->join('reorders', 'user_products.product_id', '=', 'reorders.item_id')
+        //              ->where('reorders.item_category', '=', 'Products')
         //              ->get();
+        $rawmaterial = DB::table('rawmaterials')
+                       ->join('reorders', 'rawmaterials.id', '=', 'reorders.item_id')
+                       ->where('reorders.item_category', '=', 'material')
+                       ->get();
+                       
+      $currentDate = Carbon::now()->toDateString();
 
+             $todayData = DB::table('sell_products')
+                        ->select(DB::raw('SUM(amount) AS amount'))
+                        ->whereDate('date', $currentDate)
+                        ->get();
 
+             $thisWeekData = DB::table('sell_products')
+                        ->select(DB::raw('WEEK(date) AS week'), DB::raw('SUM(amount) AS amount'))
+                        ->whereBetween('date', [Carbon::now()->startOfWeek(), Carbon::now()->endOfWeek()])
+                        ->groupBy('week')
+                        ->orderBy('week', 'desc')
+                        ->limit(1)
+                        ->get();
 
-        return view('dashboard',compact('data','rawmaterial','amount','user') );
+            $thisMonthData = DB::table('sell_products')
+                        ->select(DB::raw('MONTH(date) AS month'), DB::raw('SUM(amount) AS amount'))
+                        ->whereMonth('date', Carbon::now()->month)
+                        ->groupBy('month')
+                        ->orderBy('month', 'desc')
+                        ->limit(1)
+                        ->get();
+                        
+
+        return view('dashboard',compact('data','rawmaterial','todayData','thisWeekData','thisMonthData') );
     }
  
 

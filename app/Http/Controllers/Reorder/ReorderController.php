@@ -34,34 +34,51 @@ class ReorderController extends Controller
     }
 
     public function AddReorder(Request $request){
-        $category = "Products";
-        $status = "blink";
 
-         $data=new Reorder;
-         $data->User_id=Auth::id();
-         $data->item_id=$request->id;
-         $data->item_name=$request->name;
-         $data->item_quantity=$request->quantity;
-         $data->category=$category;
-         $data->status=$status;
-         $data->save();
-         return redirect()->back()->with('message','Reorder Added Successfuly');
-    
-        }
-        public function AddReordermaterial(Request $request){
-            $category = "material";
-            $status = "blink";
+        $id = $request->id;
+        $exists = Reorder::where('item_id', $id)->where('item_category','Products')->exists();
+        if ($exists) {
+            return redirect()->back()->with('message','Sorry The Item is Exist');
+        } else {
+            $product = Product::find($id);
+
+            $category = "Products";
+            $status = "blank";
     
              $data=new Reorder;
              $data->User_id=Auth::id();
-             $data->item_id=$request->id;
-             $data->item_name=$request->name;
+             $data->item_id=$id;
+             $data->item_name=$product->name;
              $data->item_quantity=$request->quantity;
-             $data->category=$category;
+             $data->item_category=$category;
              $data->status=$status;
              $data->save();
              return redirect()->back()->with('message','Reorder Added Successfuly');
-        
+        }
+        }
+
+        public function AddReordermaterial(Request $request){
+           
+            $id = $request->id;
+            $exists = Reorder::where('item_id', $id)->where('item_category','material')->exists();
+            if ($exists) {
+                return redirect()->back()->with('message','Sorry The Item is Exist');
+            } else {
+            $Rawmaterial = Rawmaterial::find($id);
+
+            $category = "material";
+            $status = "blank";
+    
+             $data=new Reorder;
+             $data->User_id=Auth::id();
+             $data->item_id=$id;
+             $data->item_name=$Rawmaterial->name;
+             $data->item_quantity=$request->quantity;
+             $data->item_category=$category;
+             $data->status=$status;
+             $data->save();
+             return redirect()->back()->with('message','Reorder Added Successfuly');
+            }
             }
 
         public function ListReorder(){

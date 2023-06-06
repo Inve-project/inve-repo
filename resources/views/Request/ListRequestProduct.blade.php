@@ -49,8 +49,16 @@
                     <th>S/N</th>
                     <th>Product</th>
                     <th>Quantity</th>
-                    <th>Date</th>
-                    <th>Status</th>
+                   @if (Auth::user()->id != 2)
+                    <th>Requested at</th>
+                   @endif
+
+                 <th>Status</th>
+
+                 @if (Auth::user()->id != 3)
+                 <th>Date</th>
+                 @endif
+
                  @if (Auth::user()->id == 2)
                     <th>Actions</th>
                    @endif
@@ -62,9 +70,17 @@
                     <td>{{ $index +1 }}</td>
                     <td>{{$data->name}}</td>
                     <td>{{$data->quantity}}</td>
-                    <td>{{$data->date}}</td>
-                    <td><span class="badge badge-{{$data->color}}">{{$data->status}}</span></td>
-            @if (Auth::user()->id == 2)
+                    @if (Auth::user()->id != 2)
+                    <td>{{$data->created_at}}</td>
+                   @endif
+
+                   <td><span class="badge badge-{{$data->color}}">{{$data->status}}</span></td>
+
+                 @if (Auth::user()->id != 3)
+                 <td>{{$data->date}}</td>
+                 @endif
+
+                 @if (Auth::user()->id == 2)
                     <td class="text-center py-0 align-middle">
                     <div class="btn-group btn-group-sm">
                         <a

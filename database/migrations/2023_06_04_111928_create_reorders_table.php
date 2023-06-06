@@ -19,7 +19,7 @@ class CreateReordersTable extends Migration
             $table->string('item_id',5)->nullable();
             $table->string('item_name',30)->nullable();
             $table->string('item_quantity',10)->nullable();
-            $table->string('category',10)->nullable();
+            $table->string('item_category',10)->nullable();
             $table->string('status',10)->nullable();
             $table->softDeletes();
             $table->timestamps();

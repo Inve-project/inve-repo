@@ -42,14 +42,13 @@
                <div class="row  col-md-12">
                   <div class="form-group col-md-8">
                      <label>Raw material name</label>
-                     <select class="form-control select2" style="width: 100%;" name="name" required>
+                     <select class="form-control select2" style="width: 100%;" name="id" required>
                         <option></option>
                         @foreach($data as $data)
-                        <option value="{{$data->name}}">{{$data->name}} in {{$data->units}}</option>
+                        <option value="{{$data->id}}">{{$data->name}} in {{$data->units}}</option>
                         @endforeach
                      </select>
                   </div>
-                  <input type="hidden" value="{{$data->id}}" name="id">
                     <div class="form-group col-md-8"">
                      <label >Product quantity</label>
                      <input type="text" name="quantity" class="form-control" id="exampleInputCategory" required>
