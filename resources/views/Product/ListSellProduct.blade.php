@@ -48,7 +48,7 @@
                   <tr>
                   <tr>
                     <th>S/N</th>
-                    <td>product_id</td>
+                    <td>product name</td>
                     <td>Quantity</td>
                     <td>Amount</td>
                     <td>date</td>

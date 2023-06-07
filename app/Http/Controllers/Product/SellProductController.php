@@ -36,10 +36,10 @@ class SellProductController extends Controller
 
             public function SellProductform(){
               
-              $data = DB::table('sell_products')
-                          ->select('products.id','products.name','products.units')
-                          ->join('products', 'sell_products.product_id', '=', 'products.id')
-                          ->distinct()
+              $data = DB::table('user_products')
+                          ->select('user_products.id','products.name','products.units')
+                          ->join('products', 'user_products.product_id', '=', 'products.id')
+                     //      ->distinct()
                           ->get();
 
               return view('Product.SellProductform',compact('data') );
