@@ -52,6 +52,7 @@
         </div>
         <!-- /.row -->
 
+        @if (Auth::user()->id != 2)
         <h5 class="mb-2">Products in stock</h5>
         <!-- Small boxes (Stat box) -->
         <div class="row">
@@ -71,6 +72,8 @@
            @endforeach
         </div>
         <!-- /.row -->
+        @endif
+
 
         @if (Auth::user()->id != 3)
          <!-- Small boxes (Stat box) -->
