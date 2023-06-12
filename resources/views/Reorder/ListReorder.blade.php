@@ -17,10 +17,10 @@
     <div class="card-body ">
         <div class="callout callout-success">
           <div class="row">
-            <div class="col-9">
+            <div class="col-7">
                <h3>Reorder point</h3>
             </div>
-            <div class="col-3">
+            <div class="col-5">
             @if (Auth::user()->id == 1)
                 <div class="btn-group btn-group-sm ">
                      <a href="{{url('Reorder')}}" class="btn btn-info "><i class="fas fa-plus buttoncolor"> Products</i><br></a>.

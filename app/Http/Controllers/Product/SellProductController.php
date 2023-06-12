@@ -26,9 +26,11 @@ class SellProductController extends Controller
      public function ListSellProduct(){
 
             $data = DB::table('sell_products')
-                  ->select('sell_products.id','products.name','sell_products.quantity','sell_products.amount','sell_products.date')
-                  ->join('products', 'sell_products.product_id', '=', 'products.id')
+                  ->select('sell_products.id','user_products.product_name','sell_products.quantity','sell_products.amount','sell_products.date')
+                  ->join('user_products', 'sell_products.product_id', '=', 'user_products.id')
+                  ->orderBy('sell_products.id', 'desc')
                   ->get();
+              //     dd($data);
 
             return view('Product.ListSellProduct',compact('data') );
 
@@ -36,11 +38,14 @@ class SellProductController extends Controller
 
             public function SellProductform(){
               
-              $data = DB::table('user_products')
-                          ->select('user_products.id','products.name','products.units')
-                          ->join('products', 'user_products.product_id', '=', 'products.id')
-                     //      ->distinct()
-                          ->get();
+              // $data = DB::table('user_products')
+              //             ->select('user_products.id','products.name','products.units')
+              //             ->join('products', 'user_products.product_id', '=', 'products.id')
+              //             ->distinct()
+              //             ->get();
+
+              $data = UserProduct::All();
+
 
               return view('Product.SellProductform',compact('data') );
   

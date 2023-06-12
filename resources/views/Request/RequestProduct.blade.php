@@ -47,7 +47,7 @@
                      <select class="form-control select2" style="width: 100%;" name="id" required>
                         <option></option>
                         @foreach($data as $data)
-                        <option value="{{$data->id}}">{{$data->name}} in {{$data->units}}</option>
+                        <option value="{{$data->product_id}}">{{$data->product_name}} in {{$data->units}}</option>
                         @endforeach
                      </select>
                   </div>

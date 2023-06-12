@@ -17,6 +17,7 @@ class CreateUserProductsTable extends Migration
             $table->id();
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('product_id');
+            $table->string('product_name',30)->nullable();
             $table->string('quantity',10)->nullable();
             $table->string('category',30)->nullable();
             $table->string('units',30)->nullable();

@@ -28,7 +28,7 @@ class UserProductController extends Controller
      public function ListUserProduct(){
 
             $data = DB::table('user_products')
-                        ->select('user_products.id','products.name','user_products.category','user_products.units','user_products.quantity')
+                        ->select('user_products.id','user_products.product_name','products.name','user_products.category','user_products.units','user_products.quantity')
                        ->join('products', 'user_products.product_id', '=', 'products.id')
                        ->get();
 
@@ -48,6 +48,7 @@ class UserProductController extends Controller
                     $data = new UserProduct;
                     $data->User_id = Auth::id();
                     $data->product_id = $product->id;
+                    $data->product_name = $product->name;
                     $data->quantity = $quantity;
                     $data->category = $product->category;
                     $data->units = $product->units;

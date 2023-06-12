@@ -29,11 +29,12 @@ class RequestProductController extends Controller
 
     public function RequestProduct(){
 
-        $data = DB::table('request_products')
-                   ->select('products.id','products.name','products.units')
-                   ->join('products', 'request_products.product_id', '=', 'products.id')
-                   ->distinct()
-                   ->get();
+        // $data = DB::table('request_products')
+        //            ->select('products.id','products.name','products.units')
+        //            ->join('products', 'request_products.product_id', '=', 'products.id')
+        //            ->distinct()
+        //            ->get();
+        $data = UserProduct::All();
         return view('Request.RequestProduct',compact('data') );
         
     }

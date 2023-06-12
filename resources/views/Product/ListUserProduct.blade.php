@@ -54,7 +54,7 @@
                   @foreach($data as $index=>$data)
                       <tr>
                       <td>{{ $index +1 }}</td>
-                      <td>{{$data->name}}</td>
+                      <td>{{$data->product_name}}</td>
                       <td>{{$data->category}}</td>
                       <td>{{$data->units}}</td>
                       <td>{{$data->quantity}}</td>

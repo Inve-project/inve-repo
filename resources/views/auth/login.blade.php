@@ -19,10 +19,9 @@
   <!-- /.login-logo -->
   <div class="card card-outline card-success">
     <div class="card-header text-center">
-      <a href="../../index2.html" class="h1"><b>Inventory</b>System </a>
+      <a href="" class="h3">ISAMU TRADING</a>
     </div>
     <div class="card-body">
-      <p class="login-box-msg">Sign in to start your session</p>
 
       <form method="POST" action="{{ route('login') }}">
         @csrf

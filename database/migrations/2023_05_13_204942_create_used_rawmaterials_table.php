@@ -19,6 +19,7 @@ class CreateUsedRawmaterialsTable extends Migration
             $table->unsignedBigInteger('raw_material_id');
             $table->string('name',30)->nullable();
             $table->string('quantity',10)->nullable();
+            $table->string('intake',30)->nullable();
             $table->string('date',10)->nullable();
             $table->foreign('user_id')->references('id')->on('users');
             $table->foreign('raw_material_id')->references('id')->on('rawmaterials');
