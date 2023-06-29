@@ -47,6 +47,7 @@
                     <th>S/N</th>
                     <th>Item name</th>
                     <th>Quantity</th>
+                    <th>Category</th>
                     <th>Actions</th>
                   </tr>
                   </thead>
@@ -56,6 +57,7 @@
                     <td>{{ $index +1 }}</td>
                     <td>{{$data->item_name}}</td>
                     <td>{{$data->item_quantity}}</td>
+                    <td>{{$data->item_category}}</td>
                     <td class="text-center py-0 align-middle">
                     <div class="btn-group btn-group-sm">
                     @if ($data->item_category == "Products")
